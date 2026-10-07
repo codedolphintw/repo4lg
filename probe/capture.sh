@@ -1,8 +1,10 @@
 #!/bin/bash
-# Boot a fresh simulator, run Probe.app in light and dark, save screenshot + frames.
+# Boot a fresh simulator and capture every probe page in light/dark under three
+# accessibility variants. Output: <page>-<mode>-<variant>.{png,json}.
 set -euo pipefail
 : "${OUT:?}" "${APP:?}"
 BID=dev.probe.liquidglass
+PAGES="buttons inputs list tabs sheet alert glass"
 
 RT=$(xcrun simctl list runtimes -j | python3 -c '
 import json, sys
@@ -27,12 +29,33 @@ xcrun simctl status_bar "$UDID" override --time 9:41 --batteryState charged \
   --batteryLevel 100 --wifiBars 3 --cellularBars 4
 xcrun simctl install "$UDID" "$APP"
 
-for mode in light dark; do
-  xcrun simctl ui "$UDID" appearance "$mode"
-  xcrun simctl terminate "$UDID" "$BID" 2>/dev/null || true
-  xcrun simctl launch "$UDID" "$BID"
-  sleep 8
-  xcrun simctl io "$UDID" screenshot "$OUT/glass-$mode.png"
-  DATA=$(xcrun simctl get_app_container "$UDID" "$BID" data)
-  cp "$DATA/Documents/frames.json" "$OUT/glass-$mode.json" || echo "frames.json missing ($mode)"
+# Reduce Transparency has no simctl switch. Both candidate keys are written;
+# the app records UIAccessibility.isReduceTransparencyEnabled, which is the
+# only evidence that counts.
+set_rt() {
+  for key in EnhancedBackgroundContrastEnabled ReduceTransparencyEnabled; do
+    xcrun simctl spawn "$UDID" defaults write com.apple.Accessibility "$key" -bool "$1" || true
+  done
+  xcrun simctl spawn "$UDID" notifyutil -p com.apple.accessibility.cache.enhance.background.contrast || true
+}
+
+for variant in normal reduceTransparency increaseContrast; do
+  case $variant in
+    normal) set_rt false; xcrun simctl ui "$UDID" increase_contrast disabled ;;
+    reduceTransparency) set_rt true; xcrun simctl ui "$UDID" increase_contrast disabled ;;
+    increaseContrast) set_rt false; xcrun simctl ui "$UDID" increase_contrast enabled ;;
+  esac
+  for mode in light dark; do
+    xcrun simctl ui "$UDID" appearance "$mode"
+    for page in $PAGES; do
+      name="$page-$mode-$variant"
+      xcrun simctl terminate "$UDID" "$BID" 2>/dev/null || true
+      DATA=$(xcrun simctl get_app_container "$UDID" "$BID" data)
+      rm -f "$DATA/Documents/frames.json"
+      xcrun simctl launch "$UDID" "$BID" -page "$page" > /dev/null
+      sleep 5
+      xcrun simctl io "$UDID" screenshot "$OUT/$name.png" 2> /dev/null
+      cp "$DATA/Documents/frames.json" "$OUT/$name.json" || echo "frames.json missing: $name"
+    done
+  done
 done
