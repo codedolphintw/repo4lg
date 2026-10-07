@@ -1,0 +1,43 @@
+name: probe
+on:
+  push:
+    branches: [main]
+    paths: ['probe/**', '.github/workflows/probe.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: macos-26
+    timeout-minutes: 30
+    env:
+      OUT: ${{ runner.temp }}/out
+      APP: ${{ runner.temp }}/Probe.app
+    steps:
+      - uses: actions/checkout@v4
+      - name: Environment
+        run: |
+          mkdir -p "$OUT"
+          { sw_vers; xcodebuild -version; xcrun simctl list runtimes; } | tee "$OUT/env.txt"
+      - name: Build
+        run: bash probe/build.sh
+      - name: Capture
+        run: bash probe/capture.sh
+      # Results go to the orphan branch `results` (force-pushed each run), so they
+      # can be fetched with plain git, no API token needed.
+      - name: Publish results
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch --orphan results
+          cp -R "$OUT/." .
+          git add -A
+          git commit -q -m "run ${{ github.run_id }} from ${{ github.sha }}"
+          git push -f origin results
