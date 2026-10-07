@@ -16,13 +16,14 @@ jobs:
   probe:
     runs-on: macos-26
     timeout-minutes: 30
-    env:
-      OUT: ${{ runner.temp }}/out
-      APP: ${{ runner.temp }}/Probe.app
     steps:
       - uses: actions/checkout@v4
+      # The runner context is not available in job-level env, so set paths here.
       - name: Environment
         run: |
+          OUT="$RUNNER_TEMP/out"
+          echo "OUT=$OUT" >> "$GITHUB_ENV"
+          echo "APP=$RUNNER_TEMP/Probe.app" >> "$GITHUB_ENV"
           mkdir -p "$OUT"
           { sw_vers; xcodebuild -version; xcrun simctl list runtimes; } | tee "$OUT/env.txt"
       - name: Build
