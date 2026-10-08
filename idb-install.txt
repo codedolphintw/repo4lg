@@ -1,0 +1,3 @@
+idb ok
+/opt/homebrew/bin/idb
+/opt/homebrew/bin/idb_companion

@@ -1,0 +1,2 @@
+Note: No display specified. Defaulting to display: 860B7FDD-129B-4BA8-8E83-E5B1DBB67DC4 (screenID: 1, name: LCD)
+Recording started

@@ -1,0 +1,5 @@
+05:47:32 motion start: tabline
+05:49:33 frames tool built
+05:49:48 tabline: recording
+05:50:20 tabline: recorded 1158921 bytes
+05:51:15 tabline: frames 588 duration 19.57

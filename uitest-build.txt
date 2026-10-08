@@ -1,0 +1,923 @@
+[32m==>[0m [1mDownloading bottle manifests[0m
+✔︎ Bottle Manifest xcodegen (2.46.0)
+[34m==>[0m [1mWould install 1 formula:[0m
+xcodegen
+[32m==>[0m [1mFetching downloads for: [32mxcodegen[39m[0m
+✔︎ Bottle xcodegen (2.46.0)
+[34m==>[0m [1mPouring xcodegen--2.46.0.arm64_tahoe.bottle.1.tar.gz[0m
+🍺  /opt/homebrew/Cellar/xcodegen/2.46.0: 38 files, 7.4MB
+⚙️  Generating plists...
+⚙️  Generating project...
+⚙️  Writing project...
+Created project at /Users/runner/work/repo4lg/repo4lg/probe/Probe.xcodeproj
+Command line invocation:
+    /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/xcodebuild build-for-testing -project Probe.xcodeproj -scheme Probe -destination "generic/platform=iOS Simulator" -derivedDataPath /Users/runner/work/_temp/dd
+
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (2 targets)
+    Target 'ProbeUITests' in project 'Probe'
+        ➜ Explicit dependency on target 'Probe' in project 'Probe'
+    Target 'Probe' in project 'Probe' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 3cc0fb411f0c78ddfaab767950771762
+Build description path: /Users/runner/work/_temp/dd/Build/Intermediates.noindex/XCBuildData/3cc0fb411f0c78ddfaab767950771762.xcbuilddata
+ClangStatCache /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk /Users/runner/work/_temp/dd/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache
+    cd /Users/runner/work/repo4lg/repo4lg/probe/Probe.xcodeproj
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -o /Users/runner/work/_temp/dd/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache
+
+CreateBuildDirectory /Users/runner/work/_temp/dd/Build/Products
+    cd /Users/runner/work/repo4lg/repo4lg/probe/Probe.xcodeproj
+    builtin-create-build-directory /Users/runner/work/_temp/dd/Build/Products
+
+CreateBuildDirectory /Users/runner/work/_temp/dd/Build/Intermediates.noindex
+    cd /Users/runner/work/repo4lg/repo4lg/probe/Probe.xcodeproj
+    builtin-create-build-directory /Users/runner/work/_temp/dd/Build/Intermediates.noindex
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe-e199eb287a19a5a0c958424ee41fbfd2-VFS-iphonesimulator/all-product-headers.yaml
+    cd /Users/runner/work/repo4lg/repo4lg/probe/Probe.xcodeproj
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe-e199eb287a19a5a0c958424ee41fbfd2-VFS-iphonesimulator/all-product-headers.yaml
+
+CreateBuildDirectory /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator
+    cd /Users/runner/work/repo4lg/repo4lg/probe/Probe.xcodeproj
+    builtin-create-build-directory /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator
+
+CreateBuildDirectory /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd /Users/runner/work/repo4lg/repo4lg/probe/Probe.xcodeproj
+    builtin-create-build-directory /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/work/_temp/dd/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd /Users/runner/work/repo4lg/repo4lg/probe/Probe.xcodeproj
+    builtin-create-build-directory /Users/runner/work/_temp/dd/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/work/_temp/dd/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+    cd /Users/runner/work/repo4lg/repo4lg/probe/Probe.xcodeproj
+    builtin-create-build-directory /Users/runner/work/_temp/dd/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.hmap (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.hmap
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-project-headers.hmap (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-project-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/empty-ProbeUITests.plist (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/empty-ProbeUITests.plist
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProductTypeInfoPlistAdditions.plist (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProductTypeInfoPlistAdditions.plist
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.hmap (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.hmap
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.DependencyStaticMetadataFileList (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.DependencyMetadataFileList (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-project-headers.hmap (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-project-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-own-target-headers.hmap (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-generated-files.hmap (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-generated-files.hmap
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-all-target-headers.hmap (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-all-non-framework-target-headers.hmap (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests_const_extract_protocols.json (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.SwiftFileList (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.SwiftConstValuesFileList (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.LinkFileList (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests-OutputFileMap.json (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests_const_extract_protocols.json (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.SwiftFileList (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.SwiftConstValuesFileList (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.LinkFileList (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests-OutputFileMap.json (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources/Entitlements-Simulated.plist (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources/Entitlements-Simulated.plist
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.DependencyStaticMetadataFileList (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.DependencyMetadataFileList (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-own-target-headers.hmap (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-generated-files.hmap (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-generated-files.hmap
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-all-target-headers.hmap (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-all-non-framework-target-headers.hmap (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-DebugDylibPath-normal-x86_64.txt (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-DebugDylibPath-normal-x86_64.txt
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-DebugDylibPath-normal-arm64.txt (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-DebugDylibPath-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-DebugDylibInstallName-normal-x86_64.txt (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-DebugDylibInstallName-normal-x86_64.txt
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-DebugDylibInstallName-normal-arm64.txt (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-DebugDylibInstallName-normal-arm64.txt
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe_const_extract_protocols.json (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.SwiftFileList (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.SwiftConstValuesFileList (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.LinkFileList (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe-OutputFileMap.json (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe_const_extract_protocols.json (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.SwiftFileList (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.SwiftConstValuesFileList (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.LinkFileList (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe-OutputFileMap.json (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources/Entitlements-Simulated.plist (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    write-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources/Entitlements-Simulated.plist
+
+MkDir /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /bin/mkdir -p /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest
+
+MkDir /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /bin/mkdir -p /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app
+
+ProcessProductPackaging "" /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.app-Simulated.xcent (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "FAKETEAMID.dev.probe.liquidglass";
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.app-Simulated.xcent
+
+ProcessProductPackagingDER /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.app-Simulated.xcent /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.app-Simulated.xcent.der (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /usr/bin/derq query -f xml -i /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.app-Simulated.xcent -o /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.app-Simulated.xcent.der --raw
+
+Ld /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Binary/__preview.dylib normal x86_64 (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios26.0-simulator -dynamiclib -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -O0 -L/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -install_name @rpath/Probe.debug.dylib -Xlinker -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe_dependency_info.dat -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.app-Simulated.xcent.der -Xlinker -no_adhoc_codesign -o /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Binary/__preview.dylib
+
+Ld /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Binary/__preview.dylib normal arm64 (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios26.0-simulator -dynamiclib -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -O0 -L/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -install_name @rpath/Probe.debug.dylib -Xlinker -dead_strip -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe_dependency_info.dat -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.app-Simulated.xcent.der -Xlinker -no_adhoc_codesign -o /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Binary/__preview.dylib
+
+ProcessInfoPlistFile /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Info.plist /Users/runner/work/repo4lg/repo4lg/probe/Info.plist (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-infoPlistUtility /Users/runner/work/repo4lg/repo4lg/probe/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Info.plist
+warning: User supplied UIDeviceFamily key in the Info.plist will be overwritten. Please use the build setting TARGETED_DEVICE_FAMILY and remove UIDeviceFamily from your Info.plist. (in target 'Probe' from project 'Probe')
+
+CreateUniversalBinary /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/__preview.dylib normal arm64\ x86_64 (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Binary/__preview.dylib /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Binary/__preview.dylib -output /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/__preview.dylib
+
+SwiftDriver Probe normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-SwiftDriver -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Probe -Onone @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/_temp/dd/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/_temp/dd/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/_temp/dd/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-generated-files.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-own-target-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-project-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe-Swift.h -working-directory /Users/runner/work/repo4lg/repo4lg/probe -experimental-emit-module-separately -disable-cmo
+
+SwiftDriver Probe normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-SwiftDriver -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Probe -Onone @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target x86_64-apple-ios26.0-simulator -g -module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/_temp/dd/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/_temp/dd/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/_temp/dd/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-generated-files.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-own-target-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-project-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources-normal/x86_64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources/x86_64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe-Swift.h -working-directory /Users/runner/work/repo4lg/repo4lg/probe -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_AvailabilityInternal-85LIUNZ9JWWZTQZHBJOM32WRR.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_float-1VEFZ9IL6WIFPDHYH2O51Q622.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/SwiftShims-6PMCY7PUG5KKRCTC2GVKJR5II.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/DeveloperToolsSupport-7F9BAPZGTP4620BMW4K32URMS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_stdbool-EG85VGDZUSGDDE66D7D8WKOQD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_AvailabilityInternal-NACJLEOD6QJEKE06J4YP8MCT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_stdarg-ASQ8KC8D5Y80Z0VGJZP9TJ0C6.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_stddef-95VYNZ455Z9TBHB155KIJ71M6.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_stdarg-BSE98IU4PL2ZTAP5AM22LIP84.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/ptrcheck-77OROT6XJYNQIO8L09P05BO7J.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/SwiftShims-BN64UKN1AGBE0ERN38L6V9MGK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/DeveloperToolsSupport-7NPK97YKOQ2KFL76N2LQMNUG0.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_SwiftConcurrencyShims-E71AEZ3R803B9BMGA81AHR2UG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_SwiftConcurrencyShims-2H2SXL8X0VMDA5XTYBAW38SIW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/ptrcheck-11MIC3ZSNKML2UUY9K2OG6HLT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/ptrauth-8WLTJZ6WDX4UFMPOYIKDI6OX3.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_float-407B5Y50X5TWTRV04CH9DT3VP.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_stddef-6JIZFEYOSYC9V6MOCFQXDHZ6P.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_DarwinFoundation1-QKANT7NNI696MERQC5I92ODK.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/ptrauth-47DN6A5E69BKZ4GR9QUHJWY58.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_stdbool-1FKT4FEU8F8ERH0VCR2MS6U5R.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_DarwinFoundation1-EVRQAYA1Y776GE65K1XA0AQCT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_DarwinFoundation2-EQHADFZC2WO00FWNE6XFV92EV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_limits-3DHO5L8A43WXU77XF6035A75E.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_limits-9NMCT5AFGDJTLJP5XDK9NCDL1.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_DarwinFoundation2-EIF3APDOI39ECYZFX4GHMFFGQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_stdint-8IB2KJKI1O78OTB0NO1S3TUX4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_tgmath-CHJ74MN9VX0NR5NRGY4FZAXQX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/sys_types-BZFSQO4MQXI5MQP82XRN8WAWC.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_stdatomic-91PN4LPPD1C3MOG5EZLASOMNY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_intrinsics-DDEARDDYSR384EGXWB13VSNDV.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_tgmath-2OFTZT3FL8W94QOBRN75TML5B.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_stdint-EHIX350KT9YOXAHL9HXGZMBOV.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/sys_types-7YAO1FPLCNUGLM0OVTHIRTMVF.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_DarwinFoundation3-5DBP7DBRWFOJDGCP329NNGYQ9.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_stdatomic-21ZLZUEITEOVHJZPHXS4VFS74.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_DarwinFoundation3-DHM10IMHJT53IPYJP8YOEE4A2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_inttypes-E6UP1W37OGTMMWTV9ZVY9HVRC.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/simd-EUG9CZB7L0PZDWPNQCKQYOQ4W.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Darwin-BPOXKWAZ1YQYBIKAFZLL8NOUE.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_intrinsics-BAL3SM8JOZZHRTB4S9EZ3S7BV.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/_Builtin_inttypes-1H6T86POYMHZ1NOSHCS0E4WZW.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/MachO-E1EFUYIXBADNWU5ISYC8MW99P.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/ObjectiveC-1Z5U09K4LD6DXXPL2IORAOQYO.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/simd-BYVAYEMIHQ704XSHF429POADY.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Darwin-A2NNJWZKZW0AOBTGIM0GCW86N.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Spatial-4X7CZCS7S0IW7672E927UUSN7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/os_object-BIPXCSE2QPWJCE7XVCTFA77HK.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/ObjectiveC-421GTEXHJ0UOB7UA4QMJUJ3IL.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/MachO-CRHWTYLNSEZTHZOG87XU6ETDE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/os_workgroup-72YVRPRVOW6CQUI7YIQ7FEQAU.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/os_object-1Y7KM9O34Y1C6V9LMP5DGTZHO.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Dispatch-1XH0ONIQQX78016XGPUVMZXUJ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Spatial-BMOY1J35436IRNSM54NV2NQPW.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/os_workgroup-UF79W8LJBLLUHCGR7ERVPNCZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CoreFoundation-8VGB577ULHND588DIA5MJBVAB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/XPC-EE7QFBXCA3VK4DO7341X5QW9A.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Dispatch-636GJHQU987Z38A3TAIADJQJS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/os-ECLJYMZ0WESG0JV2K3VWUKYXQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CFNetwork-6IRZZYKKA1MG05YR7D34BVTGK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Security-BKKSJLQTT65HYTK1X8PME28MA.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/XPC-AGBWYSMLQZAUG53D55EU8EJTC.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CoreGraphics-1TO5C46R7B1ZFCMJ97TS3OT8F.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CoreFoundation-87BWYFAAW37Y4BL862BX4G4IJ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/os-EIDHR8WTMTPRSRSWXDVOZGRKJ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Foundation-2QBI69DYZTGEGQ8AVEZJSX6XX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CoreText-2N5S3QBF6COKDDG79P4N6COXV.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/ImageIO-D4MX75K2J5483AGWUMDJMKI1M.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Security-2IU9GKO51CRVZV7EZ97QEIC43.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CoreGraphics-9A6RUHTIQIP20XREVW2C8ZC9L.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CFNetwork-2EHJT4X1J0EY0R6KM8OV2QKOM.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/ImageIO-8OH0FM32J6R5O8UJH7PBMHZWC.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CoreText-DFXSL03AU1BUJDEJWJLQN6WNJ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Foundation-EQALX4Z74V8IUJKEWXNVTCKPR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/OpenGLES-66L8NGESOO31PESHNHY41RS65.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/UniformTypeIdentifiers-5RLKKQUCEMKAULGOFYGQ41BN2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/FileProvider-9VT0KOWUAV7WVXU8WD7NA92TY.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/UserNotifications-6AW4KFFLY078JZYNO6DZXTL1Q.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/OSLog-AJ3SOOXYTUFDEE9E0TAJJ7BTB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/UIUtilities-888RH7VCF9IPK8TGAD3M3YRB0.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Accessibility-ANFAXBCPX2NYTKXF9Z2BYNJGE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CoreData-4CFYFN3UB0MUCNQUB4ZQUI6L9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/DataDetection-B3FC2O0JXGX76PCLFOEHCO9AU.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/UIUtilities-AF55T1T5CLZBKGA53EDCROOOF.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/OpenGLES-335DP6FL71N0IMPYKHY3QEH7E.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/UserNotifications-BHX995J8YFM5M55UZ1RHXGWWE.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/DataDetection-40Z9VUUP3UNQ6VEL91MEWNXJZ.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/FileProvider-4HUH2RY1I8UXW2SFTAS6JUPZS.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CoreTransferable-1X004D85D5KCUMVJG0S3QAHVH.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/OSLog-B3AYHLOH65CKUM8CH9HCK87TD.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Accessibility-TCY20NUE6M826IWX44GWEDW2.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CoreData-83M5XWJRWVGHL8NHGXJS303WM.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Symbols-1DS5NTNDOZAPZVXUEHGGRN2N6.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/UniformTypeIdentifiers-9NEB7ME9QBYCRZ1IMUYUEEKA7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Symbols-C27KH13IGZV0IXN9GUIKC3EP9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CoreTransferable-2G5QR1JN0HSAKELKCUCY34JWB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/IOSurface-EQ9KMF0MKIBAS3XO81C0TN8RS.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/IOSurface-F4RSC1YO5K9ALLXAZOGIRTKPS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Metal-92X7PTERLWFDGIJOQPGHTL5PH.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/Metal-5BQE544IFWPEPGMSITVB2DDJT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CoreVideo-AGIS39H0UEER38Z0LZU41U2IF.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CoreVideo-EVNZQN5PMDV4KJAMOD0G8C6RE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/QuartzCore-65YNZ1N8854S9BYOI7E77KO5M.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CoreImage-8TBIF31ID6GQYVL4X1PB0A8Q2.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/QuartzCore-BAWDSZFK2J9NUKO7LUTT1NG3N.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/CoreImage-6EDKA05ZXQ1GK950ZS9AZT0SO.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/SwiftUICore-B2WLNA5ZTQF8HZZ0A2C1K8SM6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/SwiftUICore-7JWLCFY0UM0LSG95JKXJNC1MM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/UIKit-9IZBNJ632GG6LGSNPGEYGUYID.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/UIKit-7BTV34TKPQV68HCDJV3WSFK1H.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/ModuleCache.noindex/SwiftUI-9Z65P9GNDEYAZLBGCU2VTCQVE.pcm
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ Probe (in target 'Probe' from project 'Probe')
+
+SwiftCompile normal arm64 /Users/runner/work/repo4lg/repo4lg/probe/App.swift (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+
+SwiftCompile normal arm64 Compiling\ App.swift /Users/runner/work/repo4lg/repo4lg/probe/App.swift (in target 'Probe' from project 'Probe')
+SwiftCompile normal arm64 /Users/runner/work/repo4lg/repo4lg/probe/App.swift (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/ModuleCache.noindex/SwiftUI-4WFQ4VIVVM6VY6W4S8VN1VNEX.pcm
+
+SwiftEmitModule normal x86_64 Emitting\ module\ for\ Probe (in target 'Probe' from project 'Probe')
+
+SwiftCompile normal x86_64 /Users/runner/work/repo4lg/repo4lg/probe/App.swift (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+
+SwiftCompile normal x86_64 Compiling\ App.swift /Users/runner/work/repo4lg/repo4lg/probe/App.swift (in target 'Probe' from project 'Probe')
+SwiftCompile normal x86_64 /Users/runner/work/repo4lg/repo4lg/probe/App.swift (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for Probe (in target 'Probe' from project 'Probe')
+
+SwiftDriver\ Compilation\ Requirements Probe normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Probe -Onone @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/_temp/dd/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/_temp/dd/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/_temp/dd/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-generated-files.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-own-target-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-project-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe-Swift.h -working-directory /Users/runner/work/repo4lg/repo4lg/probe -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal x86_64 Emitting module for Probe (in target 'Probe' from project 'Probe')
+
+SwiftDriver\ Compilation\ Requirements Probe normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Probe -Onone @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target x86_64-apple-ios26.0-simulator -g -module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/_temp/dd/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/_temp/dd/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/_temp/dd/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-generated-files.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-own-target-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-project-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources-normal/x86_64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources/x86_64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe-Swift.h -working-directory /Users/runner/work/repo4lg/repo4lg/probe -experimental-emit-module-separately -disable-cmo
+
+SwiftMergeGeneratedHeaders /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources/Probe-Swift.h /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe-Swift.h /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe-Swift.h (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-swiftHeaderTool -arch arm64 /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe-Swift.h -arch x86_64 /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe-Swift.h -o /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources/Probe-Swift.h
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/x86_64-apple-ios-simulator.swiftmodule /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.swiftmodule (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.swiftmodule /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/x86_64-apple-ios-simulator.swiftmodule
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/x86_64-apple-ios-simulator.swiftdoc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.swiftdoc (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.swiftdoc /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/x86_64-apple-ios-simulator.swiftdoc
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/x86_64-apple-ios-simulator.abi.json /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.abi.json (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.abi.json /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/x86_64-apple-ios-simulator.abi.json
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.swiftmodule (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.swiftmodule /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/arm64-apple-ios-simulator.swiftdoc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.swiftdoc (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.swiftdoc /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.abi.json (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.abi.json /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.swiftsourceinfo (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.swiftsourceinfo /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.swiftsourceinfo (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.swiftsourceinfo /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+ProcessProductPackaging "" /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.xctest-Simulated.xcent (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+    Entitlements:
+    
+    {
+    "application-identifier" = "FAKETEAMID.dev.probe.uitests.xctrunner";
+    "keychain-access-groups" =     (
+        "FAKETEAMID.dev.probe.uitests.xctrunner"
+    );
+}
+    
+    builtin-productPackagingUtility -entitlements -format xml -o /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.xctest-Simulated.xcent
+
+ProcessProductPackagingDER /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.xctest-Simulated.xcent /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.xctest-Simulated.xcent.der (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /usr/bin/derq query -f xml -i /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.xctest-Simulated.xcent -o /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.xctest-Simulated.xcent.der --raw
+
+SwiftDriver ProbeUITests normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-SwiftDriver -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name ProbeUITests -Onone @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target x86_64-apple-ios26.0-simulator -g -module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/_temp/dd/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk/Developer/Library/Frameworks -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/_temp/dd/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/_temp/dd/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-generated-files.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-own-target-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-project-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources-normal/x86_64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources/x86_64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests-Swift.h -working-directory /Users/runner/work/repo4lg/repo4lg/probe -experimental-emit-module-separately -disable-cmo
+
+SwiftDriver ProbeUITests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-SwiftDriver -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name ProbeUITests -Onone @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/_temp/dd/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk/Developer/Library/Frameworks -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/_temp/dd/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/_temp/dd/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-generated-files.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-own-target-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-project-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests-Swift.h -working-directory /Users/runner/work/repo4lg/repo4lg/probe -experimental-emit-module-separately -disable-cmo
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCUIAutomation-6NGFVU0RXQZR9XO8LWBBFC2AU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCUIAutomation-EYO385MEFYGC4GJNK3SC8M5N1.pcm
+
+SwiftExplicitDependencyGeneratePcm x86_64 /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCTest-ERSIHC5Q9GDD3HQEJCWJMM55W.pcm
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCUIAutomation-90LNVZXXL210.swiftmodule
+
+SwiftExplicitDependencyCompileModuleFromInterface x86_64 /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCUIAutomation-46GHK8D2CVE3.swiftmodule
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCTest-6JSZGVXE8ZC2REZ1RDFP7TX5O.pcm
+
+SwiftExplicitDependencyCompileModuleFromInterface x86_64 /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCTest-1AC0VI7N4E8RN.swiftmodule
+
+SwiftExplicitDependencyCompileModuleFromInterface arm64 /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules/XCTest-2AL7VIPRLST9H.swiftmodule
+
+SwiftEmitModule normal x86_64 Emitting\ module\ for\ ProbeUITests (in target 'ProbeUITests' from project 'Probe')
+
+SwiftCompile normal x86_64 /Users/runner/work/repo4lg/repo4lg/probe/UITests.swift (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+
+SwiftEmitModule normal arm64 Emitting\ module\ for\ ProbeUITests (in target 'ProbeUITests' from project 'Probe')
+
+SwiftCompile normal arm64 /Users/runner/work/repo4lg/repo4lg/probe/UITests.swift (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+
+SwiftDriverJobDiscovery normal x86_64 Emitting module for ProbeUITests (in target 'ProbeUITests' from project 'Probe')
+
+SwiftDriver\ Compilation\ Requirements ProbeUITests normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name ProbeUITests -Onone @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target x86_64-apple-ios26.0-simulator -g -module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/_temp/dd/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk/Developer/Library/Frameworks -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/_temp/dd/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/_temp/dd/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-generated-files.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-own-target-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-project-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources-normal/x86_64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources/x86_64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests-Swift.h -working-directory /Users/runner/work/repo4lg/repo4lg/probe -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Emitting module for ProbeUITests (in target 'ProbeUITests' from project 'Probe')
+
+SwiftDriver\ Compilation\ Requirements ProbeUITests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name ProbeUITests -Onone @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/_temp/dd/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk/Developer/Library/Frameworks -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/_temp/dd/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/_temp/dd/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-generated-files.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-own-target-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-project-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests-Swift.h -working-directory /Users/runner/work/repo4lg/repo4lg/probe -experimental-emit-module-separately -disable-cmo
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/x86_64-apple-ios-simulator.swiftmodule /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.swiftmodule (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.swiftmodule /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/x86_64-apple-ios-simulator.swiftmodule
+
+SwiftMergeGeneratedHeaders /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources/ProbeUITests-Swift.h /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests-Swift.h /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests-Swift.h (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-swiftHeaderTool -arch arm64 /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests-Swift.h -arch x86_64 /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests-Swift.h -o /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources/ProbeUITests-Swift.h
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/x86_64-apple-ios-simulator.swiftdoc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.swiftdoc (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.swiftdoc /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/x86_64-apple-ios-simulator.swiftdoc
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/x86_64-apple-ios-simulator.abi.json /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.abi.json (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.abi.json /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/x86_64-apple-ios-simulator.abi.json
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/arm64-apple-ios-simulator.swiftmodule /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.swiftmodule (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.swiftmodule /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/arm64-apple-ios-simulator.swiftmodule
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/arm64-apple-ios-simulator.swiftdoc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.swiftdoc (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.swiftdoc /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/arm64-apple-ios-simulator.swiftdoc
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/arm64-apple-ios-simulator.abi.json /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.abi.json (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.abi.json /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/arm64-apple-ios-simulator.abi.json
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.swiftsourceinfo (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.swiftsourceinfo /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.swiftsourceinfo (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.swiftsourceinfo /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo
+
+SwiftCompile normal x86_64 Compiling\ UITests.swift /Users/runner/work/repo4lg/repo4lg/probe/UITests.swift (in target 'ProbeUITests' from project 'Probe')
+
+SwiftCompile normal x86_64 /Users/runner/work/repo4lg/repo4lg/probe/UITests.swift (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+
+SwiftCompile normal arm64 Compiling\ UITests.swift /Users/runner/work/repo4lg/repo4lg/probe/UITests.swift (in target 'ProbeUITests' from project 'Probe')
+
+SwiftCompile normal arm64 /Users/runner/work/repo4lg/repo4lg/probe/UITests.swift (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+
+SwiftDriverJobDiscovery normal x86_64 Compiling UITests.swift (in target 'ProbeUITests' from project 'Probe')
+
+SwiftDriver\ Compilation ProbeUITests normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-Swift-Compilation -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name ProbeUITests -Onone @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target x86_64-apple-ios26.0-simulator -g -module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/_temp/dd/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk/Developer/Library/Frameworks -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/_temp/dd/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/_temp/dd/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-generated-files.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-own-target-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-project-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources-normal/x86_64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources/x86_64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests-Swift.h -working-directory /Users/runner/work/repo4lg/repo4lg/probe -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling UITests.swift (in target 'ProbeUITests' from project 'Probe')
+
+SwiftDriver\ Compilation ProbeUITests normal arm64 com.apple.xcode.tools.swift.compiler (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-Swift-Compilation -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name ProbeUITests -Onone @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.SwiftFileList -DDEBUG -module-alias Testing\=_Testing_Unavailable -plugin-path /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/_temp/dd/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -Isystem /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -F /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk/Developer/Library/Frameworks -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/_temp/dd/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/_temp/dd/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-generated-files.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-own-target-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests-project-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests-Swift.h -working-directory /Users/runner/work/repo4lg/repo4lg/probe -experimental-emit-module-separately -disable-cmo
+
+SwiftDriverJobDiscovery normal arm64 Compiling App.swift (in target 'Probe' from project 'Probe')
+
+SwiftDriver\ Compilation Probe normal arm64 com.apple.xcode.tools.swift.compiler (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-Swift-Compilation -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Probe -Onone @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target arm64-apple-ios26.0-simulator -g -module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/_temp/dd/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/_temp/dd/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/_temp/dd/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-generated-files.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-own-target-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-project-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe-Swift.h -working-directory /Users/runner/work/repo4lg/repo4lg/probe -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Binary/Probe.debug.dylib normal arm64 (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios26.0-simulator -dynamiclib -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -O0 -L/Users/runner/work/_temp/dd/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F/Users/runner/work/_temp/dd/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -filelist /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.LinkFileList -install_name @rpath/Probe.debug.dylib -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.swiftmodule @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe-linker-args.resp -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -Xlinker -no_adhoc_codesign -o /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Binary/Probe.debug.dylib
+
+SwiftDriverJobDiscovery normal x86_64 Compiling App.swift (in target 'Probe' from project 'Probe')
+
+SwiftDriver\ Compilation Probe normal x86_64 com.apple.xcode.tools.swift.compiler (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-Swift-Compilation -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name Probe -Onone @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.SwiftFileList -DDEBUG -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -target x86_64-apple-ios26.0-simulator -g -module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -Xfrontend -serialize-debugging-options -enable-testing -index-store-path /Users/runner/work/_temp/dd/Index.noindex/DataStore -Xcc -D_LIBCPP_HARDENING_MODE\=_LIBCPP_HARDENING_MODE_DEBUG -swift-version 5 -I /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -parse-as-library -c -j3 -enable-batch-mode -incremental -Xcc -ivfsstatcache -Xcc /Users/runner/work/_temp/dd/SDKStatCaches.noindex/iphonesimulator26.5-23F81a-688ef53f1462e2c8f657fdc38a81448ff45c64a1807a658693f2a61704f17a36.sdkstatcache -output-file-map /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/_temp/dd/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/_temp/dd/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-generated-files.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-own-target-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-project-headers.hmap -Xcc -I/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/include -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources-normal/x86_64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources/x86_64 -Xcc -I/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/DerivedSources -Xcc -DDEBUG\=1 -emit-objc-header -emit-objc-header-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe-Swift.h -working-directory /Users/runner/work/repo4lg/repo4lg/probe -experimental-emit-module-separately -disable-cmo
+
+Ld /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Binary/Probe.debug.dylib normal x86_64 (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios26.0-simulator -dynamiclib -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -O0 -L/Users/runner/work/_temp/dd/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F/Users/runner/work/_temp/dd/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -filelist /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.LinkFileList -install_name @rpath/Probe.debug.dylib -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.swiftmodule @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe-linker-args.resp -Xlinker -alias -Xlinker _main -Xlinker ___debug_main_executable_dylib_entry_point -Xlinker -no_adhoc_codesign -o /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Binary/Probe.debug.dylib
+
+ConstructStubExecutorLinkFileList /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-ExecutorLinkFileList-normal-x86_64.txt (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    construct-stub-executor-link-file-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Binary/Probe.debug.dylib /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-ExecutorLinkFileList-normal-x86_64.txt
+note: Using stub executor library with Swift entry point. (in target 'Probe' from project 'Probe')
+
+CreateUniversalBinary /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Probe.debug.dylib normal arm64\ x86_64 (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Binary/Probe.debug.dylib /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Binary/Probe.debug.dylib -output /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Probe.debug.dylib
+
+ConstructStubExecutorLinkFileList /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-ExecutorLinkFileList-normal-arm64.txt (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    construct-stub-executor-link-file-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Binary/Probe.debug.dylib /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'Probe' from project 'Probe')
+
+Ld /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Binary/Probe normal x86_64 (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios26.0-simulator -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -O0 -L/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/Frameworks -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-DebugDylibPath-normal-x86_64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-DebugDylibInstallName-normal-x86_64.txt -Xlinker -filelist -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-ExecutorLinkFileList-normal-x86_64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.app-Simulated.xcent.der /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Binary/Probe.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Binary/Probe
+
+Ld /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Binary/Probe normal arm64 (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios26.0-simulator -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -O0 -L/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -F/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -Xlinker -rpath -Xlinker @executable_path -Xlinker -rpath -Xlinker @executable_path/Frameworks -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -e ___debug_blank_executor_main -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_dylib -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-DebugDylibPath-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __debug_instlnm -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-DebugDylibInstallName-normal-arm64.txt -Xlinker -filelist -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe-ExecutorLinkFileList-normal-arm64.txt -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.app-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.app-Simulated.xcent.der /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Binary/Probe.debug.dylib -Xlinker -no_adhoc_codesign -o /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Binary/Probe
+
+CreateUniversalBinary /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Probe normal arm64\ x86_64 (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Binary/Probe /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Binary/Probe -output /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Probe
+
+CopySwiftLibs /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Probe.debug.dylib --scan-folder /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Frameworks --scan-folder /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/PlugIns --scan-folder /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/SystemExtensions --scan-folder /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Extensions --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.6.109.0.G3bzVb/Metal.xctoolchain --toolchain /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+ExtractAppIntentsMetadata (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.6.109.0.G3bzVb/Metal.xctoolchain --module-name Probe --sdk-root /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk --xcode-version 17F113 --platform-family iOS --deployment-target 26.0 --bundle-identifier dev.probe.liquidglass --output /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app --target-triple arm64-apple-ios26.0-simulator --target-triple x86_64-apple-ios26.0-simulator --binary-file /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Probe --dependency-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe_dependency_info.dat --dependency-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe_dependency_info.dat --stringsdata-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --stringsdata-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.SwiftFileList --source-file-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.SwiftFileList --metadata-file-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/arm64/Probe.SwiftConstValuesFileList --swift-const-vals-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Objects-normal/x86_64/Probe.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-10-08 05:44:47.280 appintentsmetadataprocessor[3654:14420] Starting appintentsmetadataprocessor export
+2026-10-08 05:44:47.288 appintentsmetadataprocessor[3654:14420] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+AppIntentsSSUTraining (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Info.plist --temp-dir-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/ssu --bundle-id dev.probe.liquidglass --product-path /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app --extracted-metadata-path /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Metadata.appintents --metadata-file-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/Probe.build/Probe.DependencyMetadataFileList --source-file /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Info.plist --archive-ssu-assets
+2026-10-08 05:44:47.317 appintentsnltrainingprocessor[3655:14421] Parsing options for appintentsnltrainingprocessor
+2026-10-08 05:44:47.319 appintentsnltrainingprocessor[3655:14421] Starting AppIntents SSU YAML Generation
+2026-10-08 05:44:47.325 appintentsnltrainingprocessor[3655:14421] No AppShortcuts found - Skipping.
+
+CodeSign /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Probe.debug.dylib (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/Probe.debug.dylib
+
+CodeSign /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/__preview.dylib (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app/__preview.dylib
+
+CodeSign /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app
+
+RegisterExecutionPolicyException /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-RegisterExecutionPolicyException /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app
+
+Validate /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-validationUtility /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app -shallow-bundle -infoplist-subpath Info.plist
+
+Touch /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app (in target 'Probe' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /usr/bin/touch -c /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/Probe.app
+
+ProcessInfoPlistFile /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/Info.plist /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/empty-ProbeUITests.plist (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-infoPlistUtility /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/empty-ProbeUITests.plist -producttype com.apple.product-type.bundle.ui-testing -expandbuildsettings -format binary -platform iphonesimulator -additionalcontentfile /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProductTypeInfoPlistAdditions.plist -o /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/Info.plist
+
+Ld /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/Binary/ProbeUITests normal x86_64 (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target x86_64-apple-ios26.0-simulator -bundle -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -O0 -L/Users/runner/work/_temp/dd/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -L/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/runner/work/_temp/dd/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk/Developer/Library/Frameworks -filelist /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.LinkFileList -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.swiftmodule @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests-linker-args.resp -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.xctest-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.xctest-Simulated.xcent.der -Xlinker -no_adhoc_codesign -o /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/Binary/ProbeUITests
+
+Ld /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/Binary/ProbeUITests normal arm64 (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios26.0-simulator -bundle -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk -O0 -L/Users/runner/work/_temp/dd/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -L/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -L/Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib -F/Users/runner/work/_temp/dd/Build/Intermediates.noindex/EagerLinkingTBDs/Debug-iphonesimulator -F/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator -iframework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks -iframework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk/Developer/Library/Frameworks -filelist /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.LinkFileList -Xlinker -rpath -Xlinker @loader_path/Frameworks -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests_lto.o -rdynamic -Xlinker -no_deduplicate -Xlinker -objc_abi_version -Xlinker 2 -Xlinker -dependency_info -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.swiftmodule @/Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests-linker-args.resp -Xlinker -needed_framework -Xlinker XCTest -framework XCTest -Xlinker -needed-lXCTestSwiftSupport -lXCTestSwiftSupport -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __entitlements -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.xctest-Simulated.xcent -Xlinker -sectcreate -Xlinker __TEXT -Xlinker __ents_der -Xlinker /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.xctest-Simulated.xcent.der -Xlinker -no_adhoc_codesign -o /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/Binary/ProbeUITests
+
+CreateUniversalBinary /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/ProbeUITests normal arm64\ x86_64 (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo -create /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/Binary/ProbeUITests /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/Binary/ProbeUITests -output /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/ProbeUITests
+
+CopySwiftLibs /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-swiftStdLibTool --copy --verbose --sign - --scan-executable /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/ProbeUITests --scan-folder /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/Frameworks --scan-folder /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/PlugIns --scan-folder /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/SystemExtensions --scan-folder /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/Extensions --platform iphonesimulator --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.6.109.0.G3bzVb/Metal.xctoolchain --toolchain /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/Frameworks --strip-bitcode --scan-executable /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib --strip-bitcode-tool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os
+
+ExtractAppIntentsMetadata (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.6.109.0.G3bzVb/Metal.xctoolchain --module-name ProbeUITests --sdk-root /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.5.sdk --xcode-version 17F113 --platform-family iOS --deployment-target 26.0 --bundle-identifier dev.probe.uitests --output /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest --target-triple arm64-apple-ios26.0-simulator --target-triple x86_64-apple-ios26.0-simulator --binary-file /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/ProbeUITests --dependency-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests_dependency_info.dat --dependency-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests_dependency_info.dat --stringsdata-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --stringsdata-file /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.SwiftFileList --source-file-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.SwiftFileList --metadata-file-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/arm64/ProbeUITests.SwiftConstValuesFileList --swift-const-vals-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/Objects-normal/x86_64/ProbeUITests.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-10-08 05:44:47.724 appintentsmetadataprocessor[3665:14468] Starting appintentsmetadataprocessor export
+2026-10-08 05:44:47.726 appintentsmetadataprocessor[3665:14468] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+AppIntentsSSUTraining (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/Info.plist --temp-dir-path /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ssu --bundle-id dev.probe.uitests --product-path /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest --extracted-metadata-path /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/Metadata.appintents --metadata-file-list /Users/runner/work/_temp/dd/Build/Intermediates.noindex/Probe.build/Debug-iphonesimulator/ProbeUITests.build/ProbeUITests.DependencyMetadataFileList --source-file /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/Info.plist --archive-ssu-assets
+2026-10-08 05:44:47.742 appintentsnltrainingprocessor[3666:14469] Parsing options for appintentsnltrainingprocessor
+2026-10-08 05:44:47.743 appintentsnltrainingprocessor[3666:14469] Starting AppIntents SSU YAML Generation
+2026-10-08 05:44:47.743 appintentsnltrainingprocessor[3666:14469] No AppShortcuts found - Skipping.
+
+MkDir /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /bin/mkdir -p /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app
+
+CopyAndPreserveArchs /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/ProbeUITests-Runner (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/XCTRunner.app/XCTRunner -output /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/ProbeUITests-Runner -extract arm64 -extract x86_64
+
+CopyPlistFile /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Info.plist /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/XCTRunner.app/Info.plist (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copyPlist --validate --convert xml1 --macro-expansion WRAPPEDPRODUCTNAME ProbeUITests-Runner --macro-expansion WRAPPEDPRODUCTBUNDLEIDENTIFIER dev.probe.uitests.xctrunner --macro-expansion TESTPRODUCTNAME ProbeUITests --macro-expansion TESTPRODUCTBUNDLEIDENTIFIER dev.probe.uitests --copy-value UIDeviceFamily /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest/Info.plist --outdir /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app -- /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/XCTRunner.app/Info.plist
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PkgInfo /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/XCTRunner.app/PkgInfo (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Agents/XCTRunner.app/PkgInfo /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks/libXCTestSwiftSupport.dylib /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libXCTestSwiftSupport.dylib /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks/XCUnit.framework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCUnit.framework (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCUnit.framework /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks/XCUIAutomation.framework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCUIAutomation.framework (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCUIAutomation.framework /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks/XCTestSupport.framework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestSupport.framework (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestSupport.framework /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks/XCTestCore.framework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestCore.framework (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTestCore.framework /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks/XCTest.framework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks/XCTAutomationSupport.framework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/XCTAutomationSupport.framework /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks
+
+Copy /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks/Testing.framework /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/Testing.framework (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -exclude Headers -exclude PrivateHeaders -exclude Modules -exclude \*.tbd -resolve-src-symlinks /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/Testing.framework /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/Frameworks
+
+CodeSign /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest
+
+CodeSign /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    
+    Signing Identity:     "Sign to Run Locally"
+    
+    /usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app
+/Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app: replacing existing signature
+
+RegisterExecutionPolicyException /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    builtin-RegisterExecutionPolicyException /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest
+
+Touch /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest (in target 'ProbeUITests' from project 'Probe')
+    cd /Users/runner/work/repo4lg/repo4lg/probe
+    /usr/bin/touch -c /Users/runner/work/_temp/dd/Build/Products/Debug-iphonesimulator/ProbeUITests-Runner.app/PlugIns/ProbeUITests.xctest
+
+** TEST BUILD SUCCEEDED **
+
+uitests built

@@ -1,0 +1,17 @@
+{
+  "bounds" : {
+
+  },
+  "contrast" : "standard",
+  "darkerSystemColors" : false,
+  "page" : "tabline",
+  "reduceTransparency" : false,
+  "safeArea" : {
+    "bottom" : 34,
+    "leading" : 0,
+    "top" : 62,
+    "trailing" : 0
+  },
+  "scale" : 3,
+  "scheme" : "light"
+}

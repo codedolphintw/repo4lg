@@ -1,0 +1,17 @@
+probe/frames.swift:19:39: warning: 'duration' was deprecated in macOS 13.0: Use load(.duration) instead [#DeprecatedDeclaration]
+17 | gen.appliesPreferredTrackTransform = true
+18 | try? FileManager.default.createDirectory(atPath: outDir, withIntermediateDirectories: true)
+19 | let duration = CMTimeGetSeconds(asset.duration)
+   |                                       `- warning: 'duration' was deprecated in macOS 13.0: Use load(.duration) instead [#DeprecatedDeclaration]
+20 | var i = 0
+21 | while Double(i) / fps < duration {
+
+probe/frames.swift:23:26: warning: 'copyCGImage(at:actualTime:)' was deprecated in macOS 15.0: Use generateCGImageAsynchronouslyForTime:completionHandler: instead [#DeprecatedDeclaration]
+21 | while Double(i) / fps < duration {
+22 |     let t = CMTime(seconds: Double(i) / fps, preferredTimescale: 600)
+23 |     if let cg = try? gen.copyCGImage(at: t, actualTime: nil) {
+   |                          `- warning: 'copyCGImage(at:actualTime:)' was deprecated in macOS 15.0: Use generateCGImageAsynchronouslyForTime:completionHandler: instead [#DeprecatedDeclaration]
+24 |         let w = Int(Double(cg.width) * scale), h = Int(Double(cg.height) * scale)
+25 |         let ctx = CGContext(data: nil, width: w, height: h, bitsPerComponent: 8, bytesPerRow: 0,
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>
