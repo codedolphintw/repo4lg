@@ -4,7 +4,10 @@
 set -euo pipefail
 : "${OUT:?}" "${APP:?}"
 BID=dev.probe.liquidglass
+# probe/run.env (optional) picks what this run captures: PAGES, VARIANTS, MOTION.
+[ -f probe/run.env ] && . probe/run.env
 PAGES="${PAGES:-showcase swatch-regular swatch-clear edges buttons inputs list tabs sheet alert glass}"
+VARIANTS="${VARIANTS:-normal reduceTransparency increaseContrast}"
 
 RT=$(xcrun simctl list runtimes -j | python3 -c '
 import json, sys
@@ -39,7 +42,7 @@ set_rt() {
   xcrun simctl spawn "$UDID" notifyutil -p com.apple.accessibility.cache.enhance.background.contrast || true
 }
 
-for variant in normal reduceTransparency increaseContrast; do
+for variant in $VARIANTS; do
   case $variant in
     normal) set_rt false; xcrun simctl ui "$UDID" increase_contrast disabled ;;
     reduceTransparency) set_rt true; xcrun simctl ui "$UDID" increase_contrast disabled ;;
@@ -62,3 +65,38 @@ for variant in normal reduceTransparency increaseContrast; do
     done
   done
 done
+
+# Motion: screen recordings of the animated pages (light mode), cut into
+# frames at 30 fps, 1 px per pt. "press" is pressed with idb when available.
+if [ -n "${MOTION:-}" ]; then
+  set_rt false; xcrun simctl ui "$UDID" increase_contrast disabled; xcrun simctl ui "$UDID" appearance light
+  xcrun swiftc -O probe/frames.swift -o "$RUNNER_TEMP/frames"
+  for page in $MOTION; do
+    xcrun simctl terminate "$UDID" "$BID" 2>/dev/null || true
+    DATA=$(xcrun simctl get_app_container "$UDID" "$BID" data)
+    rm -f "$DATA/Documents/frames.json"
+    xcrun simctl launch "$UDID" "$BID" -page "$page" > /dev/null
+    for _ in $(seq 20); do [ -f "$DATA/Documents/frames.json" ] && break; sleep 0.5; done
+    cp "$DATA/Documents/frames.json" "$OUT/motion-$page.json" || true
+    xcrun simctl io "$UDID" recordVideo --codec h264 --force "$OUT/motion-$page.mp4" 2> /dev/null &
+    REC=$!
+    sleep 1
+    if [ "$page" = press ] && command -v idb > /dev/null; then
+      # centers from frames.json, in points
+      read -r IX IY BX BY < <(python3 -c '
+import json, sys
+b = json.load(open(sys.argv[1]))["bounds"]
+c = lambda k: (b[k]["x"] + b[k]["w"] / 2, b[k]["y"] + b[k]["h"] / 2)
+print(*c("press.interactive"), *c("press.button"))' "$OUT/motion-$page.json")
+      sleep 1
+      idb ui tap --udid "$UDID" --duration 1.5 "$IX" "$IY" > "$OUT/idb-press.txt" 2>&1 || echo "idb tap failed" >> "$OUT/idb-press.txt"
+      sleep 1
+      idb ui tap --udid "$UDID" --duration 1.5 "$BX" "$BY" >> "$OUT/idb-press.txt" 2>&1 || echo "idb tap failed" >> "$OUT/idb-press.txt"
+      sleep 1
+    else
+      sleep 7
+    fi
+    kill -INT $REC; wait $REC || true
+    "$RUNNER_TEMP/frames" "$OUT/motion-$page.mp4" "$OUT/motion-$page" 30 0.3333333 > "$OUT/motion-$page.txt" 2>&1 || true
+  done
+fi

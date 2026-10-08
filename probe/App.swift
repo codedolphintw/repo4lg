@@ -54,6 +54,11 @@ struct RootView: View {
         case "swatch-clear": SwatchPage(clear: true)
         case "edges": EdgesPage()
         case "showcase": ShowcasePage()
+        case "tabswitch": TabSwitchPage()
+        case "toggle": ToggleMotionPage()
+        case "morph": MorphPage()
+        case "press": PressPage()
+        case let p where p.hasPrefix("merge-"): MergePage(gap: Double(p.dropFirst(6)) ?? 0)
         default: Text("unknown page \(page)")
         }
     }
@@ -474,5 +479,100 @@ struct ShowcasePage: View {
         }
         .padding(16)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+    }
+}
+
+// MARK: - Motion pages
+// Each animates on a timer from t = 4 s (after frames.json is written), every
+// 2 s, so a screen recording started at ~3 s sees several cycles.
+
+func everyTwoSeconds(_ step: @escaping @MainActor () -> Void) async {
+    try? await Task.sleep(for: .seconds(4))
+    while !Task.isCancelled {
+        await MainActor.run { withAnimation { step() } }
+        try? await Task.sleep(for: .seconds(2))
+    }
+}
+
+// Static: two 64 pt glass circles in one GlassEffectContainer(spacing: 40),
+// `gap` pt apart, over a gradient -- the merge bridge as a function of gap.
+struct MergePage: View {
+    let gap: Double
+    var body: some View {
+        ZStack {
+            LinearGradient(colors: [.orange, .pink, .purple, .blue], startPoint: .topLeading, endPoint: .bottomTrailing)
+                .ignoresSafeArea()
+            GlassEffectContainer(spacing: 40) {
+                HStack(spacing: gap) {
+                    Color.clear.frame(width: 64, height: 64).glassEffect().probe("merge.a")
+                    Color.clear.frame(width: 64, height: 64).glassEffect().probe("merge.b")
+                }
+            }
+        }
+    }
+}
+
+struct TabSwitchPage: View {
+    @State private var sel = 0
+    var body: some View {
+        TabView(selection: $sel) {
+            Tab("Home", systemImage: "house", value: 0) { ScrollView { VStack(spacing: 0) { ColorRows() } } }
+            Tab("Search", systemImage: "magnifyingglass", value: 1) { ScrollView { VStack(spacing: 0) { ColorRows() } } }
+            Tab("Library", systemImage: "books.vertical", value: 2) { ScrollView { VStack(spacing: 0) { ColorRows() } } }
+            Tab("Settings", systemImage: "gear", value: 3) { ScrollView { VStack(spacing: 0) { ColorRows() } } }
+        }
+        .task { await everyTwoSeconds { sel = sel == 0 ? 2 : 0 } }
+    }
+}
+
+struct ToggleMotionPage: View {
+    @State private var on = false
+    var body: some View {
+        VStack {
+            Toggle("Toggle", isOn: $on).labelsHidden().probe("toggle")
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .task { await everyTwoSeconds { on.toggle() } }
+    }
+}
+
+// The common iOS 26 pattern: one glass circle that expands into a row of
+// glass buttons, matched with glassEffectID in one container.
+struct MorphPage: View {
+    @Namespace private var ns
+    @State private var open = false
+    var body: some View {
+        ZStack {
+            Stripes().ignoresSafeArea()
+            GlassEffectContainer(spacing: 20) {
+                HStack(spacing: 12) {
+                    if open {
+                        ForEach(["pencil", "trash", "paperplane"], id: \.self) { icon in
+                            Image(systemName: icon).frame(width: 56, height: 56)
+                                .glassEffect().glassEffectID(icon, in: ns)
+                        }
+                    }
+                    Image(systemName: open ? "xmark" : "plus").frame(width: 56, height: 56)
+                        .glassEffect().glassEffectID("main", in: ns)
+                }
+            }
+            .probe("morph")
+        }
+        .task { await everyTwoSeconds { open.toggle() } }
+    }
+}
+
+// Pressed by the capture script (idb) while recording: an interactive glass
+// shape and a glass button, both over stripes so the lens shows.
+struct PressPage: View {
+    var body: some View {
+        ZStack {
+            Stripes().ignoresSafeArea()
+            VStack(spacing: 60) {
+                Color.clear.frame(width: 200, height: 72)
+                    .glassEffect(.regular.interactive(), in: .capsule).probe("press.interactive")
+                Button("Glass Button") {}.buttonStyle(.glass).controlSize(.large).probe("press.button")
+            }
+        }
     }
 }
