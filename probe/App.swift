@@ -59,6 +59,8 @@ struct RootView: View {
         case "toggle": ToggleMotionPage()
         case "morph": MorphPage()
         case "press": PressPage()
+        case "tabtext": TabScrollPage(auto: false)
+        case "tabscroll": TabScrollPage()
         case let p where p.hasPrefix("merge-"): MergePage(gap: Double(p.dropFirst(6)) ?? 0)
         default: Text("unknown page \(page)")
         }
@@ -575,6 +577,57 @@ struct PressPage: View {
                     .glassEffect(.regular.interactive(), in: .capsule).probe("press.interactive")
                 Button("Glass Button") {}.buttonStyle(.glass).controlSize(.large).probe("press.button")
             }
+        }
+    }
+}
+
+// Text under the tab bar (does it show through?) and a near-black block moved
+// under the bar in jumps and one slow sweep (does the variant switch, and does
+// it fade?). Schedule, from 4 s after launch, as the block's top edge in
+// window points: 900 (off) 1 s -> 600 (bar fully covered) 2.5 s -> 900 2.5 s
+// -> 822 (bar half covered) 2.5 s -> 900 1 s -> sweep to 600 over 5 s, 2 s.
+// The block's start frame is in frames.json as "tabscroll.block".
+struct TabScrollPage: View {
+    var auto = true
+    @State private var pos = ScrollPosition(edge: .top)
+    var body: some View {
+        TabView {
+            Tab("Home", systemImage: "house") {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 0) {
+                        ForEach(0..<22, id: \.self) { i in
+                            Text(i % 5 == 0 ? "Heading \(i)" : "The quick brown fox jumps over the lazy dog \(i)")
+                                .font(i % 5 == 0 ? .title.bold() : .body)
+                                .foregroundStyle(.primary)
+                                .frame(maxWidth: .infinity, minHeight: 40, alignment: .leading)
+                                .padding(.horizontal, 16)
+                        }
+                        Rectangle().fill(Color(white: 0.04)).frame(height: 1400).probe("tabscroll.block")
+                    }
+                }
+                .scrollPosition($pos)
+            }
+            Tab("Search", systemImage: "magnifyingglass") { Text("Search") }
+            Tab("Library", systemImage: "books.vertical") { Text("Library") }
+            Tab("Settings", systemImage: "gear") { Text("Settings") }
+        }
+        .task { if auto { await run() } }
+    }
+
+    // Block top (window y) -> scroll offset, from the block's frame at offset 0.
+    private func run() async {
+        try? await Task.sleep(for: .seconds(4))
+        guard let top0 = FrameStore.frames["tabscroll.block"]?.minY else { return }
+        func go(_ y: Double) { pos.scrollTo(y: max(0, top0 - y)) }
+        let steps: [(Double, Double)] = [(900, 1), (600, 2.5), (900, 2.5), (822, 2.5), (900, 1)]
+        for (y, hold) in steps {
+            go(y)
+            try? await Task.sleep(for: .seconds(hold))
+        }
+        let n = 300
+        for k in 0...n {
+            go(900 - 300 * Double(k) / Double(n))
+            try? await Task.sleep(for: .seconds(5.0 / Double(n)))
         }
     }
 }

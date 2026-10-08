@@ -117,6 +117,8 @@ print(*c("press.interactive"), *c("press.button"))' "$OUT/motion-$page.json")
       sleep 1
       tmo 20 idb ui tap --udid "$UDID" --duration 1.5 "$BX" "$BY" >> "$OUT/idb-press.txt" 2>&1 || echo "idb tap failed rc=$?" >> "$OUT/idb-press.txt"
       sleep 1
+    elif [ "$page" = tabscroll ]; then
+      sleep 18          # the page drives itself; schedule in App.swift
     else
       sleep 7
     fi
@@ -127,6 +129,7 @@ print(*c("press.interactive"), *c("press.button"))' "$OUT/motion-$page.json")
     case $page in
       tabdrag) CROP="0 770 402 100" ;;
       press) CROP="0 300 402 260" ;;
+      tabscroll) CROP="0 760 402 114" ;;
       *) CROP="" ;;
     esac
     tmo 400 "$RUNNER_TEMP/frames" "$OUT/motion-$page.mp4" "$OUT/motion-$page" 30 0.3333333 $CROP > "$OUT/motion-$page.txt" 2>&1 || log "$page: frames failed"
