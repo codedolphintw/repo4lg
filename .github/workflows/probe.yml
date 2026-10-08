@@ -38,6 +38,14 @@ jobs:
           which idb idb_companion >> "$OUT/idb-install.txt" 2>&1 || true
       - name: Build
         run: bash probe/build.sh
+      - name: Build UI tests (XcodeGen + xcodebuild)
+        continue-on-error: true
+        timeout-minutes: 15
+        run: |
+          brew install xcodegen > "$OUT/uitest-build.txt" 2>&1
+          cd probe && xcodegen generate --spec project.yml >> "$OUT/uitest-build.txt" 2>&1
+          xcodebuild build-for-testing -project Probe.xcodeproj -scheme Probe             -destination 'generic/platform=iOS Simulator' -derivedDataPath "$RUNNER_TEMP/dd"             >> "$OUT/uitest-build.txt" 2>&1 && echo "uitests built" | tee -a "$OUT/uitest-build.txt"
+          tail -30 "$OUT/uitest-build.txt"
       - name: Capture
         timeout-minutes: 22
         run: bash probe/capture.sh

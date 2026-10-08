@@ -89,7 +89,13 @@ if [ -n "${MOTION:-}" ]; then
     xcrun simctl io "$UDID" recordVideo --codec h264 --force "$OUT/motion-$page.mp4" 2> "$OUT/rec-$page.txt" &
     REC=$!
     sleep 1
-    if [ "$page" = tabdrag ] && command -v idb > /dev/null; then
+    XCTESTRUN=$(ls "$RUNNER_TEMP"/dd/Build/Products/*.xctestrun 2>/dev/null | head -1 || true)
+    if { [ "$page" = tabdrag ] || [ "$page" = press ]; } && [ -n "$XCTESTRUN" ]; then
+      TEST=$([ "$page" = tabdrag ] && echo testTabDrag || echo testPress)
+      log "$page: xcodebuild $TEST"
+      tmo 240 xcodebuild test-without-building -xctestrun "$XCTESTRUN" -destination "id=$UDID"         -only-testing:ProbeUITests/ProbeUITests/$TEST > "$OUT/xctest-$page.txt" 2>&1 || log "$page: xctest rc=$?"
+      grep -E "Test Case .* (passed|failed)" "$OUT/xctest-$page.txt" | tee -a "$OUT/progress.txt" || true
+    elif [ "$page" = tabdrag ] && command -v idb > /dev/null; then
       # tab bar row y ~ 822 pt; slots ~ 70, 160, 245, 330 pt. Press on Home,
       # hold, drag slowly to Settings, release; then a quick drag back.
       sleep 1
@@ -118,7 +124,12 @@ print(*c("press.interactive"), *c("press.button"))' "$OUT/motion-$page.json")
     for _ in $(seq 20); do kill -0 $REC 2>/dev/null || break; sleep 0.5; done
     kill -9 $REC 2>/dev/null || true
     log "$page: recorded $(stat -f %z "$OUT/motion-$page.mp4" 2>/dev/null || echo missing) bytes"
-    tmo 240 "$RUNNER_TEMP/frames" "$OUT/motion-$page.mp4" "$OUT/motion-$page" 30 0.3333333 > "$OUT/motion-$page.txt" 2>&1 || log "$page: frames failed"
+    case $page in
+      tabdrag) CROP="0 770 402 100" ;;
+      press) CROP="0 300 402 260" ;;
+      *) CROP="" ;;
+    esac
+    tmo 400 "$RUNNER_TEMP/frames" "$OUT/motion-$page.mp4" "$OUT/motion-$page" 30 0.3333333 $CROP > "$OUT/motion-$page.txt" 2>&1 || log "$page: frames failed"
     log "$page: $(cat "$OUT/motion-$page.txt" | tail -1)"
   done
 fi
