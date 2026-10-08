@@ -15,7 +15,7 @@ concurrency:
 jobs:
   probe:
     runs-on: macos-26
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       # The runner context is not available in job-level env, so set paths here.
@@ -30,13 +30,15 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         run: |
-          brew tap facebook/fb > /dev/null
-          brew install idb-companion > /dev/null
+          brew tap facebook/fb > "$OUT/idb-install.txt" 2>&1
+          brew install idb-companion >> "$OUT/idb-install.txt" 2>&1
           pip3 install --break-system-packages fb-idb > /dev/null
-          idb --help > /dev/null && echo "idb ok"
+          idb --help > /dev/null && echo "idb ok" | tee "$OUT/idb-install.txt"
+          which idb idb_companion >> "$OUT/idb-install.txt" 2>&1 || true
       - name: Build
         run: bash probe/build.sh
       - name: Capture
+        timeout-minutes: 22
         run: bash probe/capture.sh
       # Results go to the orphan branch `results` (force-pushed each run), so they
       # can be fetched with plain git, no API token needed.

@@ -52,6 +52,7 @@ for variant in $VARIANTS; do
     xcrun simctl ui "$UDID" appearance "$mode"
     for page in $PAGES; do
       name="$page-$mode-$variant"
+      echo "$(date +%T) $name" >> "$OUT/progress.txt"
       xcrun simctl terminate "$UDID" "$BID" 2>/dev/null || true
       DATA=$(xcrun simctl get_app_container "$UDID" "$BID" data)
       rm -f "$DATA/Documents/frames.json"
@@ -68,9 +69,14 @@ done
 
 # Motion: screen recordings of the animated pages (light mode), cut into
 # frames at 30 fps, 1 px per pt. "press" is pressed with idb when available.
+# perl alarm: macOS has no `timeout`. tmo SECONDS cmd...
+tmo() { perl -e 'alarm shift; exec @ARGV' "$@"; }
+log() { echo "$(date +%T) $*" | tee -a "$OUT/progress.txt"; }
 if [ -n "${MOTION:-}" ]; then
+  log "motion start: $MOTION"
   set_rt false; xcrun simctl ui "$UDID" increase_contrast disabled; xcrun simctl ui "$UDID" appearance light
-  xcrun swiftc -O probe/frames.swift -o "$RUNNER_TEMP/frames"
+  tmo 300 xcrun swiftc -O probe/frames.swift -o "$RUNNER_TEMP/frames" 2> "$OUT/frames-build.txt" || log "frames.swift build failed"
+  log "frames tool built"
   for page in $MOTION; do
     xcrun simctl terminate "$UDID" "$BID" 2>/dev/null || true
     DATA=$(xcrun simctl get_app_container "$UDID" "$BID" data)
@@ -78,7 +84,8 @@ if [ -n "${MOTION:-}" ]; then
     xcrun simctl launch "$UDID" "$BID" -page "$page" > /dev/null
     for _ in $(seq 20); do [ -f "$DATA/Documents/frames.json" ] && break; sleep 0.5; done
     cp "$DATA/Documents/frames.json" "$OUT/motion-$page.json" || true
-    xcrun simctl io "$UDID" recordVideo --codec h264 --force "$OUT/motion-$page.mp4" 2> /dev/null &
+    log "$page: recording"
+    xcrun simctl io "$UDID" recordVideo --codec h264 --force "$OUT/motion-$page.mp4" 2> "$OUT/rec-$page.txt" &
     REC=$!
     sleep 1
     if [ "$page" = press ] && command -v idb > /dev/null; then
@@ -89,14 +96,19 @@ b = json.load(open(sys.argv[1]))["bounds"]
 c = lambda k: (b[k]["x"] + b[k]["w"] / 2, b[k]["y"] + b[k]["h"] / 2)
 print(*c("press.interactive"), *c("press.button"))' "$OUT/motion-$page.json")
       sleep 1
-      idb ui tap --udid "$UDID" --duration 1.5 "$IX" "$IY" > "$OUT/idb-press.txt" 2>&1 || echo "idb tap failed" >> "$OUT/idb-press.txt"
+      log "press: idb tap $IX $IY"
+      tmo 20 idb ui tap --udid "$UDID" --duration 1.5 "$IX" "$IY" > "$OUT/idb-press.txt" 2>&1 || echo "idb tap failed rc=$?" >> "$OUT/idb-press.txt"
       sleep 1
-      idb ui tap --udid "$UDID" --duration 1.5 "$BX" "$BY" >> "$OUT/idb-press.txt" 2>&1 || echo "idb tap failed" >> "$OUT/idb-press.txt"
+      tmo 20 idb ui tap --udid "$UDID" --duration 1.5 "$BX" "$BY" >> "$OUT/idb-press.txt" 2>&1 || echo "idb tap failed rc=$?" >> "$OUT/idb-press.txt"
       sleep 1
     else
       sleep 7
     fi
-    kill -INT $REC; wait $REC || true
-    "$RUNNER_TEMP/frames" "$OUT/motion-$page.mp4" "$OUT/motion-$page" 30 0.3333333 > "$OUT/motion-$page.txt" 2>&1 || true
+    kill -INT $REC 2>/dev/null || true
+    for _ in $(seq 20); do kill -0 $REC 2>/dev/null || break; sleep 0.5; done
+    kill -9 $REC 2>/dev/null || true
+    log "$page: recorded $(stat -f %z "$OUT/motion-$page.mp4" 2>/dev/null || echo missing) bytes"
+    tmo 240 "$RUNNER_TEMP/frames" "$OUT/motion-$page.mp4" "$OUT/motion-$page" 30 0.3333333 > "$OUT/motion-$page.txt" 2>&1 || log "$page: frames failed"
+    log "$page: $(cat "$OUT/motion-$page.txt" | tail -1)"
   done
 fi
