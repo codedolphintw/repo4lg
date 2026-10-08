@@ -61,6 +61,7 @@ struct RootView: View {
         case "press": PressPage()
         case "tabtext": TabScrollPage(auto: false)
         case "tabscroll": TabScrollPage()
+        case "tabline": TabLinePage()
         case let p where p.hasPrefix("merge-"): MergePage(gap: Double(p.dropFirst(6)) ?? 0)
         default: Text("unknown page \(page)")
         }
@@ -628,6 +629,43 @@ struct TabScrollPage: View {
         for k in 0...n {
             go(900 - 300 * Double(k) / Double(n))
             try? await Task.sleep(for: .seconds(5.0 / Double(n)))
+        }
+    }
+}
+
+// Where does each tab-bar pixel sample from? A 2 pt black line on white sweeps
+// under the bar: horizontal, y 740 -> 874 over 9 s; then vertical, x 0 -> 140
+// over 7 s (the left capsule end). Starts 5 s after launch. A thin line keeps
+// the backdrop mean (and so the tone) nearly constant.
+struct TabLinePage: View {
+    @State private var y = 700.0
+    @State private var x = -10.0
+    var body: some View {
+        TabView {
+            Tab("Home", systemImage: "house") {
+                ZStack {
+                    Color.white
+                    Rectangle().fill(.black).frame(width: 402, height: 2).position(x: 201, y: y)
+                    Rectangle().fill(.black).frame(width: 2, height: 874).position(x: x, y: 437)
+                }
+                .ignoresSafeArea()
+            }
+            Tab("Search", systemImage: "magnifyingglass") { Text("Search") }
+            Tab("Library", systemImage: "books.vertical") { Text("Library") }
+            Tab("Settings", systemImage: "gear") { Text("Settings") }
+        }
+        .task {
+            try? await Task.sleep(for: .seconds(5))
+            let n = 540
+            for k in 0...n {
+                y = 740 + 134 * Double(k) / Double(n)
+                try? await Task.sleep(for: .seconds(9.0 / Double(n)))
+            }
+            y = 2000
+            for k in 0...420 {
+                x = 140 * Double(k) / 420
+                try? await Task.sleep(for: .seconds(7.0 / 420))
+            }
         }
     }
 }

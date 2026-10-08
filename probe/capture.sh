@@ -119,6 +119,8 @@ print(*c("press.interactive"), *c("press.button"))' "$OUT/motion-$page.json")
       sleep 1
     elif [ "$page" = tabscroll ]; then
       sleep 18          # the page drives itself; schedule in App.swift
+    elif [ "$page" = tabline ]; then
+      sleep 22
     else
       sleep 7
     fi
@@ -130,9 +132,10 @@ print(*c("press.interactive"), *c("press.button"))' "$OUT/motion-$page.json")
       tabdrag) CROP="0 770 402 100" ;;
       press) CROP="0 300 402 260" ;;
       tabscroll) CROP="0 760 402 114" ;;
+      tabline) CROP="0 1480 804 268" ;;   # output px at scale 2/3
       *) CROP="" ;;
     esac
-    tmo 400 "$RUNNER_TEMP/frames" "$OUT/motion-$page.mp4" "$OUT/motion-$page" 30 0.3333333 $CROP > "$OUT/motion-$page.txt" 2>&1 || log "$page: frames failed"
+    tmo 400 "$RUNNER_TEMP/frames" "$OUT/motion-$page.mp4" "$OUT/motion-$page" 30 "$([ "$page" = tabline ] && echo 0.6666667 || echo 0.3333333)" $CROP > "$OUT/motion-$page.txt" 2>&1 || log "$page: frames failed"
     log "$page: $(cat "$OUT/motion-$page.txt" | tail -1)"
   done
 fi
