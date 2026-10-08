@@ -42,6 +42,7 @@ set_rt() {
   xcrun simctl spawn "$UDID" notifyutil -p com.apple.accessibility.cache.enhance.background.contrast || true
 }
 
+[ "$PAGES" = "-" ] && VARIANTS=""      # motion-only run
 for variant in $VARIANTS; do
   case $variant in
     normal) set_rt false; xcrun simctl ui "$UDID" increase_contrast disabled ;;
@@ -88,7 +89,16 @@ if [ -n "${MOTION:-}" ]; then
     xcrun simctl io "$UDID" recordVideo --codec h264 --force "$OUT/motion-$page.mp4" 2> "$OUT/rec-$page.txt" &
     REC=$!
     sleep 1
-    if [ "$page" = press ] && command -v idb > /dev/null; then
+    if [ "$page" = tabdrag ] && command -v idb > /dev/null; then
+      # tab bar row y ~ 822 pt; slots ~ 70, 160, 245, 330 pt. Press on Home,
+      # hold, drag slowly to Settings, release; then a quick drag back.
+      sleep 1
+      log "tabdrag: idb swipe"
+      tmo 30 idb ui swipe --udid "$UDID" --duration 2.0 --delta 4 70 822 330 822 > "$OUT/idb-tabdrag.txt" 2>&1 || echo "idb swipe failed rc=$?" >> "$OUT/idb-tabdrag.txt"
+      sleep 1.5
+      tmo 30 idb ui swipe --udid "$UDID" --duration 0.6 --delta 8 330 822 160 822 >> "$OUT/idb-tabdrag.txt" 2>&1 || echo "idb swipe failed rc=$?" >> "$OUT/idb-tabdrag.txt"
+      sleep 1.5
+    elif [ "$page" = press ] && command -v idb > /dev/null; then
       # centers from frames.json, in points
       read -r IX IY BX BY < <(python3 -c '
 import json, sys

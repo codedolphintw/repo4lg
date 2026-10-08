@@ -31,6 +31,7 @@ jobs:
         timeout-minutes: 10
         run: |
           brew tap facebook/fb > "$OUT/idb-install.txt" 2>&1
+          brew trust facebook/fb >> "$OUT/idb-install.txt" 2>&1 || true
           brew install idb-companion >> "$OUT/idb-install.txt" 2>&1
           pip3 install --break-system-packages fb-idb > /dev/null
           idb --help > /dev/null && echo "idb ok" | tee "$OUT/idb-install.txt"

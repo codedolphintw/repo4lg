@@ -55,6 +55,7 @@ struct RootView: View {
         case "edges": EdgesPage()
         case "showcase": ShowcasePage()
         case "tabswitch": TabSwitchPage()
+        case "tabdrag": TabSwitchPage(auto: false)
         case "toggle": ToggleMotionPage()
         case "morph": MorphPage()
         case "press": PressPage()
@@ -513,6 +514,7 @@ struct MergePage: View {
 }
 
 struct TabSwitchPage: View {
+    var auto = true
     @State private var sel = 0
     var body: some View {
         TabView(selection: $sel) {
@@ -521,7 +523,7 @@ struct TabSwitchPage: View {
             Tab("Library", systemImage: "books.vertical", value: 2) { ScrollView { VStack(spacing: 0) { ColorRows() } } }
             Tab("Settings", systemImage: "gear", value: 3) { ScrollView { VStack(spacing: 0) { ColorRows() } } }
         }
-        .task { await everyTwoSeconds { sel = sel == 0 ? 2 : 0 } }
+        .task { if auto { await everyTwoSeconds { sel = sel == 0 ? 2 : 0 } } }
     }
 }
 
