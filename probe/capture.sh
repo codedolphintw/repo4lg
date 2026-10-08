@@ -4,7 +4,7 @@
 set -euo pipefail
 : "${OUT:?}" "${APP:?}"
 BID=dev.probe.liquidglass
-PAGES="buttons inputs list tabs sheet alert glass"
+PAGES="${PAGES:-showcase swatch-regular swatch-clear edges buttons inputs list tabs sheet alert glass}"
 
 RT=$(xcrun simctl list runtimes -j | python3 -c '
 import json, sys
@@ -53,7 +53,10 @@ for variant in normal reduceTransparency increaseContrast; do
       DATA=$(xcrun simctl get_app_container "$UDID" "$BID" data)
       rm -f "$DATA/Documents/frames.json"
       xcrun simctl launch "$UDID" "$BID" -page "$page" > /dev/null
-      sleep 5
+      # 3 s for the app to write frames.json, plus margin; one launch in 42
+      # missed 5 s in run 37705008773, so wait for the file instead.
+      for _ in $(seq 1 20); do [ -f "$DATA/Documents/frames.json" ] && break; sleep 0.5; done
+      sleep 1
       xcrun simctl io "$UDID" screenshot "$OUT/$name.png" 2> /dev/null
       cp "$DATA/Documents/frames.json" "$OUT/$name.json" || echo "frames.json missing: $name"
     done

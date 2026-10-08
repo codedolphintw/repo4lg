@@ -50,6 +50,10 @@ struct RootView: View {
         case "sheet": SheetPage()
         case "alert": AlertPage()
         case "glass": GlassPage()
+        case "swatch-regular": SwatchPage(clear: false)
+        case "swatch-clear": SwatchPage(clear: true)
+        case "edges": EdgesPage()
+        case "showcase": ShowcasePage()
         default: Text("unknown page \(page)")
         }
     }
@@ -330,5 +334,145 @@ struct GlassPage: View {
                     .glassEffect(.regular.tint(.blue)).probe("\(name).tint")
             }
         }
+    }
+}
+
+// MARK: - Measurement pages
+
+// Glass over flat swatches. Cell id = background hex, so the output colour can
+// be fitted against a known input. 3 columns x 7 rows of 134 x 112 pt cells,
+// each holding a 94 x 48 pt glass rectangle (corner 12), 20+ pt from any other
+// colour so the blur cannot reach a neighbouring cell.
+struct SwatchPage: View {
+    let clear: Bool
+    static let colors: [(Double, Double, Double)] = [
+        (0, 0, 0), (0.1, 0.1, 0.1), (0.2, 0.2, 0.2), (0.3, 0.3, 0.3), (0.4, 0.4, 0.4),
+        (0.5, 0.5, 0.5), (0.6, 0.6, 0.6), (0.7, 0.7, 0.7), (0.8, 0.8, 0.8), (0.9, 0.9, 0.9),
+        (1, 1, 1), (1, 0, 0), (0, 1, 0), (0, 0, 1), (0, 1, 1), (1, 0, 1), (1, 1, 0),
+        (1, 0.5, 0), (0.5, 0.25, 0.75), (0.2, 0.6, 0.4), (0.9, 0.75, 0.6),
+    ]
+
+    var body: some View {
+        let rows = stride(from: 0, to: Self.colors.count, by: 3).map { Array(Self.colors[$0..<min($0 + 3, Self.colors.count)]) }
+        VStack(spacing: 0) {
+            ForEach(rows.indices, id: \.self) { r in
+                HStack(spacing: 0) {
+                    ForEach(rows[r].indices, id: \.self) { c in
+                        let col = rows[r][c]
+                        ZStack {
+                            Color(.sRGB, red: col.0, green: col.1, blue: col.2)
+                            Color.clear.frame(width: 94, height: 48)
+                                .glassEffect(clear ? .clear : .regular, in: .rect(cornerRadius: 12))
+                                .probe("sw." + hex(col.0, col.1, col.2))
+                        }
+                        .frame(width: 134, height: 112)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+        }
+        .frame(maxHeight: .infinity, alignment: .top)
+        .ignoresSafeArea()
+    }
+}
+
+func hex(_ r: Double, _ g: Double, _ b: Double) -> String {
+    String(format: "%02X%02X%02X", Int((r * 255).rounded()), Int((g * 255).rounded()), Int((b * 255).rounded()))
+}
+
+// Black|white step edge (blur kernel), grid (refraction), white field (shadow).
+struct EdgesPage: View {
+    var body: some View {
+        VStack(spacing: 0) {
+            ZStack {
+                HStack(spacing: 0) { Color.black; Color.white }
+                Color.clear.frame(width: 300, height: 96)
+                    .glassEffect(.regular, in: .rect(cornerRadius: 24)).probe("edge.regular")
+            }
+            .frame(height: 170)
+            ZStack {
+                HStack(spacing: 0) { Color.black; Color.white }
+                Color.clear.frame(width: 300, height: 96)
+                    .glassEffect(.clear, in: .rect(cornerRadius: 24)).probe("edge.clear")
+            }
+            .frame(height: 170)
+            ZStack {
+                Grid()
+                Color.clear.frame(width: 300, height: 96)
+                    .glassEffect(.regular, in: .rect(cornerRadius: 24)).probe("grid.regular")
+            }
+            .frame(height: 170)
+            ZStack {
+                Color.white
+                Color.clear.frame(width: 200, height: 96)
+                    .glassEffect(.regular, in: .rect(cornerRadius: 24)).probe("shadow.regular")
+            }
+            .frame(maxHeight: .infinity)
+        }
+        .ignoresSafeArea()
+    }
+}
+
+// The comparison page (see SHOWCASE_SPEC.md in the consuming project): every
+// compared control on the system background, plus glass samples on stripes.
+struct ShowcasePage: View {
+    @State private var on = true
+    @State private var off = false
+    @State private var value = 0.4
+    @State private var count = 3
+    @State private var segment = 1
+    @State private var text = "Text"
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            HStack(spacing: 16) {
+                Button("Glass") {}.buttonStyle(.glass).probe("btn-glass")
+                Button("Prominent") {}.buttonStyle(.glassProminent).probe("btn-prominent")
+                Button("Bordered") {}.buttonStyle(.bordered).probe("btn-bordered")
+            }
+            HStack(spacing: 16) {
+                Button("Filled") {}.buttonStyle(.borderedProminent).probe("btn-filled")
+                Button("Plain") {}.buttonStyle(.borderless).probe("btn-plain")
+                Button("Off") {}.buttonStyle(.glass).disabled(true).probe("btn-disabled")
+            }
+            HStack(spacing: 16) {
+                Button("Small") {}.buttonStyle(.glass).controlSize(.small).probe("btn-glass-small")
+                Button("Large") {}.buttonStyle(.glass).controlSize(.large).probe("btn-glass-large")
+                Button {} label: { Image(systemName: "plus") }
+                    .buttonStyle(.glass).buttonBorderShape(.circle).probe("icon-glass")
+                Button {} label: { Image(systemName: "plus") }
+                    .buttonStyle(.glassProminent).buttonBorderShape(.circle).probe("icon-prominent")
+            }
+            HStack(spacing: 24) {
+                Toggle("On", isOn: $on).labelsHidden().probe("toggle-on")
+                Toggle("Off", isOn: $off).labelsHidden().probe("toggle-off")
+                Stepper("Stepper", value: $count).labelsHidden().probe("stepper")
+            }
+            Slider(value: $value).frame(width: 240).probe("slider")
+            Picker("Segment", selection: $segment) {
+                Text("One").tag(0)
+                Text("Two").tag(1)
+                Text("Three").tag(2)
+            }
+            .pickerStyle(.segmented).frame(width: 280).probe("segmented")
+            TextField("Placeholder", text: $text).textFieldStyle(.roundedBorder)
+                .frame(width: 280).probe("textfield")
+            ProgressView(value: 0.6).frame(width: 240).probe("progress")
+            ZStack {
+                Stripes()
+                HStack(spacing: 16) {
+                    Color.clear.frame(width: 120, height: 64)
+                        .glassEffect(.regular, in: .rect(cornerRadius: 20)).probe("glass-regular")
+                    Color.clear.frame(width: 120, height: 64)
+                        .glassEffect(.clear, in: .rect(cornerRadius: 20)).probe("glass-clear")
+                    Color.clear.frame(width: 64, height: 64)
+                        .glassEffect(.regular.tint(.blue)).probe("glass-tint")
+                }
+            }
+            .frame(width: 370, height: 112)
+            .probe("stripes")
+        }
+        .padding(16)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
 }
