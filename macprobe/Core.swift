@@ -421,8 +421,7 @@ final class Ctx {
     func begin() async {
         // The watchdog must not depend on the main queue (a blocked menu loop would starve it).
         DispatchQueue.global().asyncAfter(deadline: .now() + 100) {
-            fputs("watchdog: scene still running after 100 s
-", stderr)
+            fputs("watchdog: scene still running after 100 s\n", stderr)
             exit(3)
         }
         await pause(1.5)
