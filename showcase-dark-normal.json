@@ -1,0 +1,2066 @@
+{
+  "appearance" : "dark",
+  "notes" : {
+    "flags" : {
+      "AppleAccentColor" : "unset",
+      "AppleKeyboardUIMode" : "unset",
+      "differentiateWithoutColor" : false,
+      "effectiveAppearance" : "NSAppearanceNameDarkAqua",
+      "increaseContrast" : false,
+      "invertColors" : false,
+      "os" : "Version 26.6.2 (Build 25G83)",
+      "reduceMotion" : true,
+      "reduceTransparency" : false,
+      "UIDesignRequiresCompatibility" : false
+    },
+    "page-a" : {
+      "host" : {
+        "h" : 620,
+        "w" : 1000,
+        "x" : 12,
+        "y" : 72
+      },
+      "probes" : {
+        "btn-bordered" : {
+          "h" : 24,
+          "w" : 80,
+          "x" : 24,
+          "y" : 24
+        },
+        "btn-borderless" : {
+          "h" : 16,
+          "w" : 65,
+          "x" : 434,
+          "y" : 28
+        },
+        "btn-disabled" : {
+          "h" : 24,
+          "w" : 44,
+          "x" : 513,
+          "y" : 24
+        },
+        "btn-glass" : {
+          "h" : 24,
+          "w" : 58,
+          "x" : 218,
+          "y" : 24
+        },
+        "btn-glass-prominent" : {
+          "h" : 24,
+          "w" : 86,
+          "x" : 290,
+          "y" : 24
+        },
+        "btn-plain" : {
+          "h" : 16,
+          "w" : 30,
+          "x" : 390,
+          "y" : 28
+        },
+        "btn-prominent" : {
+          "h" : 24,
+          "w" : 86,
+          "x" : 118,
+          "y" : 24
+        },
+        "checkbox-off" : {
+          "h" : 16.420000000000002,
+          "w" : 60,
+          "x" : 308,
+          "y" : 69.790000000000006
+        },
+        "checkbox-on" : {
+          "h" : 16.420000000000002,
+          "w" : 60,
+          "x" : 234,
+          "y" : 69.790000000000006
+        },
+        "glass-clear" : {
+          "h" : 64,
+          "w" : 120,
+          "x" : 177,
+          "y" : 282.83999999999997
+        },
+        "glass-regular" : {
+          "h" : 64,
+          "w" : 120,
+          "x" : 41,
+          "y" : 282.83999999999997
+        },
+        "glass-tint" : {
+          "h" : 64,
+          "w" : 64,
+          "x" : 313,
+          "y" : 282.83999999999997
+        },
+        "icon-glass" : {
+          "h" : 21,
+          "w" : 23,
+          "x" : 24,
+          "y" : 67.5
+        },
+        "icon-prominent" : {
+          "h" : 21,
+          "w" : 23,
+          "x" : 61,
+          "y" : 67.5
+        },
+        "menu-button" : {
+          "h" : 24,
+          "w" : 82,
+          "x" : 495,
+          "y" : 108
+        },
+        "picker-menu" : {
+          "h" : 24,
+          "w" : 73,
+          "x" : 398,
+          "y" : 108
+        },
+        "progress" : {
+          "h" : 20,
+          "w" : 240,
+          "x" : 328,
+          "y" : 214.84
+        },
+        "radio-group" : {
+          "h" : 38.840000000000003,
+          "w" : 46,
+          "x" : 24,
+          "y" : 108
+        },
+        "segmented" : {
+          "h" : 24,
+          "w" : 280,
+          "x" : 94,
+          "y" : 108
+        },
+        "slider" : {
+          "h" : 16,
+          "w" : 240,
+          "x" : 24,
+          "y" : 169.84
+        },
+        "slider-steps" : {
+          "h" : 16,
+          "w" : 240,
+          "x" : 288,
+          "y" : 169.84
+        },
+        "spinner" : {
+          "h" : 32,
+          "w" : 32,
+          "x" : 632,
+          "y" : 208.84
+        },
+        "spinner-small" : {
+          "h" : 16,
+          "w" : 16,
+          "x" : 592,
+          "y" : 216.84
+        },
+        "stepper" : {
+          "h" : 26,
+          "w" : 20,
+          "x" : 552,
+          "y" : 164.84
+        },
+        "stripes" : {
+          "h" : 112,
+          "w" : 370,
+          "x" : 24,
+          "y" : 258.83999999999997
+        },
+        "switch-off" : {
+          "h" : 24,
+          "w" : 54,
+          "x" : 166,
+          "y" : 66
+        },
+        "switch-on" : {
+          "h" : 24,
+          "w" : 54,
+          "x" : 98,
+          "y" : 66
+        },
+        "textfield" : {
+          "h" : 24,
+          "w" : 280,
+          "x" : 24,
+          "y" : 212.84
+        }
+      }
+    },
+    "page-b1" : {
+      "host" : {
+        "h" : 620,
+        "w" : 1000,
+        "x" : 12,
+        "y" : 72
+      },
+      "probes" : {
+        "bordered-extraLarge" : {
+          "h" : 36,
+          "w" : 77,
+          "x" : 481,
+          "y" : 16
+        },
+        "bordered-large" : {
+          "h" : 28,
+          "w" : 69,
+          "x" : 388,
+          "y" : 20
+        },
+        "bordered-mini" : {
+          "h" : 13,
+          "w" : 46,
+          "x" : 150,
+          "y" : 27.5
+        },
+        "bordered-regular" : {
+          "h" : 24,
+          "w" : 65,
+          "x" : 299,
+          "y" : 22
+        },
+        "bordered-small" : {
+          "h" : 20,
+          "w" : 55,
+          "x" : 220,
+          "y" : 24
+        },
+        "checkbox-extraLarge" : {
+          "h" : 18,
+          "w" : 62,
+          "x" : 461,
+          "y" : 236
+        },
+        "checkbox-large" : {
+          "h" : 18,
+          "w" : 62,
+          "x" : 375,
+          "y" : 236
+        },
+        "checkbox-mini" : {
+          "h" : 12,
+          "w" : 41,
+          "x" : 150,
+          "y" : 239
+        },
+        "checkbox-regular" : {
+          "h" : 16.420000000000002,
+          "w" : 60,
+          "x" : 291,
+          "y" : 236.78999999999999
+        },
+        "checkbox-small" : {
+          "h" : 14.119999999999999,
+          "w" : 52,
+          "x" : 215,
+          "y" : 237.94
+        },
+        "glass-extraLarge" : {
+          "h" : 36,
+          "w" : 77,
+          "x" : 481,
+          "y" : 104
+        },
+        "glass-large" : {
+          "h" : 28,
+          "w" : 69,
+          "x" : 388,
+          "y" : 108
+        },
+        "glass-mini" : {
+          "h" : 13,
+          "w" : 46,
+          "x" : 150,
+          "y" : 115.5
+        },
+        "glass-regular" : {
+          "h" : 24,
+          "w" : 65,
+          "x" : 299,
+          "y" : 110
+        },
+        "glass-small" : {
+          "h" : 20,
+          "w" : 55,
+          "x" : 220,
+          "y" : 112
+        },
+        "glassProminent-extraLarge" : {
+          "h" : 36,
+          "w" : 77,
+          "x" : 481,
+          "y" : 148
+        },
+        "glassProminent-large" : {
+          "h" : 28,
+          "w" : 69,
+          "x" : 388,
+          "y" : 152
+        },
+        "glassProminent-mini" : {
+          "h" : 13,
+          "w" : 46,
+          "x" : 150,
+          "y" : 159.5
+        },
+        "glassProminent-regular" : {
+          "h" : 24,
+          "w" : 65,
+          "x" : 299,
+          "y" : 154
+        },
+        "glassProminent-small" : {
+          "h" : 20,
+          "w" : 55,
+          "x" : 220,
+          "y" : 156
+        },
+        "prominent-extraLarge" : {
+          "h" : 36,
+          "w" : 77,
+          "x" : 481,
+          "y" : 60
+        },
+        "prominent-large" : {
+          "h" : 28,
+          "w" : 69,
+          "x" : 388,
+          "y" : 64
+        },
+        "prominent-mini" : {
+          "h" : 13,
+          "w" : 46,
+          "x" : 150,
+          "y" : 71.5
+        },
+        "prominent-regular" : {
+          "h" : 24,
+          "w" : 65,
+          "x" : 299,
+          "y" : 66
+        },
+        "prominent-small" : {
+          "h" : 20,
+          "w" : 55,
+          "x" : 220,
+          "y" : 68
+        },
+        "switch-extraLarge" : {
+          "h" : 36,
+          "w" : 80,
+          "x" : 444,
+          "y" : 192
+        },
+        "switch-large" : {
+          "h" : 28,
+          "w" : 64,
+          "x" : 356,
+          "y" : 196
+        },
+        "switch-mini" : {
+          "h" : 16,
+          "w" : 36,
+          "x" : 150,
+          "y" : 202
+        },
+        "switch-regular" : {
+          "h" : 24,
+          "w" : 54,
+          "x" : 278,
+          "y" : 198
+        },
+        "switch-small" : {
+          "h" : 20,
+          "w" : 44,
+          "x" : 210,
+          "y" : 200
+        }
+      }
+    },
+    "page-b2" : {
+      "host" : {
+        "h" : 620,
+        "w" : 1000,
+        "x" : 12,
+        "y" : 72
+      },
+      "probes" : {
+        "menu-extraLarge" : {
+          "h" : 36,
+          "w" : 95,
+          "x" : 512,
+          "y" : 194
+        },
+        "menu-large" : {
+          "h" : 28,
+          "w" : 81,
+          "x" : 407,
+          "y" : 198
+        },
+        "menu-mini" : {
+          "h" : 16,
+          "w" : 50,
+          "x" : 150,
+          "y" : 204
+        },
+        "menu-regular" : {
+          "h" : 24,
+          "w" : 73,
+          "x" : 310,
+          "y" : 200
+        },
+        "menu-small" : {
+          "h" : 20,
+          "w" : 62,
+          "x" : 224,
+          "y" : 202
+        },
+        "progress-extraLarge" : {
+          "h" : 20,
+          "w" : 110,
+          "x" : 686,
+          "y" : 166
+        },
+        "progress-large" : {
+          "h" : 20,
+          "w" : 110,
+          "x" : 552,
+          "y" : 166
+        },
+        "progress-mini" : {
+          "h" : 12,
+          "w" : 110,
+          "x" : 150,
+          "y" : 170
+        },
+        "progress-regular" : {
+          "h" : 20,
+          "w" : 110,
+          "x" : 418,
+          "y" : 166
+        },
+        "progress-small" : {
+          "h" : 12,
+          "w" : 110,
+          "x" : 284,
+          "y" : 170
+        },
+        "segmented-extraLarge" : {
+          "h" : 36,
+          "w" : 130,
+          "x" : 766,
+          "y" : 16
+        },
+        "segmented-large" : {
+          "h" : 28,
+          "w" : 130,
+          "x" : 612,
+          "y" : 20
+        },
+        "segmented-mini" : {
+          "h" : 16,
+          "w" : 130,
+          "x" : 150,
+          "y" : 26
+        },
+        "segmented-regular" : {
+          "h" : 24,
+          "w" : 130,
+          "x" : 458,
+          "y" : 22
+        },
+        "segmented-small" : {
+          "h" : 20,
+          "w" : 130,
+          "x" : 304,
+          "y" : 24
+        },
+        "slider-extraLarge" : {
+          "h" : 20,
+          "w" : 110,
+          "x" : 686,
+          "y" : 92
+        },
+        "slider-large" : {
+          "h" : 20,
+          "w" : 110,
+          "x" : 552,
+          "y" : 92
+        },
+        "slider-mini" : {
+          "h" : 12,
+          "w" : 110,
+          "x" : 150,
+          "y" : 96
+        },
+        "slider-regular" : {
+          "h" : 16,
+          "w" : 110,
+          "x" : 418,
+          "y" : 94
+        },
+        "slider-small" : {
+          "h" : 14,
+          "w" : 110,
+          "x" : 284,
+          "y" : 95
+        },
+        "stepper-extraLarge" : {
+          "h" : 38,
+          "w" : 30,
+          "x" : 319,
+          "y" : 120
+        },
+        "stepper-large" : {
+          "h" : 30,
+          "w" : 23,
+          "x" : 272,
+          "y" : 124
+        },
+        "stepper-mini" : {
+          "h" : 20,
+          "w" : 13,
+          "x" : 150,
+          "y" : 129
+        },
+        "stepper-regular" : {
+          "h" : 26,
+          "w" : 20,
+          "x" : 228,
+          "y" : 126
+        },
+        "stepper-small" : {
+          "h" : 22,
+          "w" : 17,
+          "x" : 187,
+          "y" : 128
+        },
+        "textfield-extraLarge" : {
+          "h" : 24,
+          "w" : 110,
+          "x" : 686,
+          "y" : 60
+        },
+        "textfield-large" : {
+          "h" : 24,
+          "w" : 110,
+          "x" : 552,
+          "y" : 60
+        },
+        "textfield-mini" : {
+          "h" : 19,
+          "w" : 110,
+          "x" : 150,
+          "y" : 62.5
+        },
+        "textfield-regular" : {
+          "h" : 24,
+          "w" : 110,
+          "x" : 418,
+          "y" : 60
+        },
+        "textfield-small" : {
+          "h" : 21,
+          "w" : 110,
+          "x" : 284,
+          "y" : 61.5
+        }
+      }
+    },
+    "screens" : [
+      {
+        "colorSpace" : "Apple Virtual",
+        "frame" : {
+          "h" : 768,
+          "w" : 1024,
+          "x" : 0,
+          "y" : 0
+        },
+        "scale" : 1,
+        "visibleFrame" : {
+          "h" : 678,
+          "w" : 1024,
+          "x" : 0,
+          "y" : 30
+        }
+      }
+    ]
+  },
+  "scene" : "showcase",
+  "schema_version" : 1,
+  "screens" : [
+    {
+      "colorSpace" : "Apple Virtual",
+      "frame" : {
+        "h" : 768,
+        "w" : 1024,
+        "x" : 0,
+        "y" : 0
+      },
+      "scale" : 1,
+      "visibleFrame" : {
+        "h" : 678,
+        "w" : 1024,
+        "x" : 0,
+        "y" : 30
+      }
+    }
+  ],
+  "shots" : [
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-page-a.png",
+      "name" : "page-a",
+      "status" : 0,
+      "win_Showcase" : "showcase-dark-normal-page-a-win-Showcase.png",
+      "win_Showcase_status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-hover-btn-bordered.png",
+      "name" : "hover-btn-bordered",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-press-btn-bordered.png",
+      "name" : "press-btn-bordered",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-hover-btn-glass.png",
+      "name" : "hover-btn-glass",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-press-btn-glass.png",
+      "name" : "press-btn-glass",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-hover-btn-glass-prominent.png",
+      "name" : "hover-btn-glass-prominent",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-press-btn-glass-prominent.png",
+      "name" : "press-btn-glass-prominent",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-hover-icon-glass.png",
+      "name" : "hover-icon-glass",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-press-icon-glass.png",
+      "name" : "press-icon-glass",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-hover-switch-off.png",
+      "name" : "hover-switch-off",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-press-switch-off.png",
+      "name" : "press-switch-off",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-hover-checkbox-off.png",
+      "name" : "hover-checkbox-off",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-press-checkbox-off.png",
+      "name" : "press-checkbox-off",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-hover-segmented.png",
+      "name" : "hover-segmented",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-press-segmented.png",
+      "name" : "press-segmented",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-hover-slider.png",
+      "name" : "hover-slider",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-press-slider.png",
+      "name" : "press-slider",
+      "status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-page-b1.png",
+      "name" : "page-b1",
+      "status" : 0,
+      "win_Showcase" : "showcase-dark-normal-page-b1-win-Showcase.png",
+      "win_Showcase_status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "layer" : 0,
+          "name" : "Showcase",
+          "number" : 53
+        },
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 768,
+            "w" : 1024,
+            "x" : 0,
+            "y" : 0
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 52
+        }
+      ],
+      "file" : "showcase-dark-normal-page-b2.png",
+      "name" : "page-b2",
+      "status" : 0,
+      "win_Showcase" : "showcase-dark-normal-page-b2-win-Showcase.png",
+      "win_Showcase_status" : 0,
+      "windows" : {
+        "Showcase" : {
+          "btn_close" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 21,
+            "y" : 49
+          },
+          "btn_mini" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 44,
+            "y" : 49
+          },
+          "btn_zoom" : {
+            "h" : 14,
+            "w" : 14,
+            "x" : 67,
+            "y" : 49
+          },
+          "contentLayout" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "contentView" : {
+            "h" : 620,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 72
+          },
+          "frame" : {
+            "h" : 652,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 40
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 53,
+          "title" : "Showcase"
+        }
+      }
+    }
+  ],
+  "variant" : "normal"
+}
