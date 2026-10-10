@@ -1,3 +1,4 @@
 # <scene> <light|dark> <variant>
+# second run of the same plan: capture noise and the glass state of the stripes panel
 showcase light normal
 showcase dark normal
