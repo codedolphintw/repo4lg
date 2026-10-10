@@ -1,0 +1,4 @@
+initial reduceTransparency: 1
+initial reduceMotion: 1
+defaults write com.apple.universalaccess reduceTransparency -bool false rc=0
+now reduceTransparency: 0

@@ -1,0 +1,2328 @@
+{
+  "appearance" : "dark",
+  "notes" : {
+    "clock" : {
+      "again-2" : 0.56239211559295654,
+      "again-6" : 0.763153076171875,
+      "again-12" : 1.4326250553131104,
+      "again-25" : 2.7126700878143311,
+      "again-50" : 5.6277800798416138,
+      "again-90" : 9.4536260366439819,
+      "fresh-2" : 0.37886905670166016,
+      "fresh-6" : 0.75566601753234863,
+      "fresh-12" : 1.3295789957046509,
+      "fresh-25" : 2.6680120229721069,
+      "fresh-50" : 5.1425230503082275,
+      "fresh-90" : 9.249298095703125,
+      "v1-2" : 0.44753801822662354,
+      "v1-6" : 0.85735201835632324,
+      "v1-12" : 1.329056978225708,
+      "v1-25" : 2.6661030054092407,
+      "v1-50" : 5.1966639757156372,
+      "v1-90" : 9.1480059623718262
+    },
+    "flags" : {
+      "AppleAccentColor" : "unset",
+      "AppleKeyboardUIMode" : "unset",
+      "differentiateWithoutColor" : false,
+      "effectiveAppearance" : "NSAppearanceNameDarkAqua",
+      "increaseContrast" : false,
+      "invertColors" : false,
+      "os" : "Version 26.6.2 (Build 25G83)",
+      "reduceMotion" : true,
+      "reduceTransparency" : false,
+      "UIDesignRequiresCompatibility" : false
+    },
+    "layout" : {
+      "adapt" : [
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 35,
+            "y" : 38
+          },
+          "name" : "flat128",
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 0,
+            "y" : 0
+          }
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 225,
+            "y" : 38
+          },
+          "name" : "stripes12_duty50",
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 190,
+            "y" : 0
+          }
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 415,
+            "y" : 38
+          },
+          "name" : "stripes12_duty25",
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 380,
+            "y" : 0
+          }
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 605,
+            "y" : 38
+          },
+          "name" : "stripes12_duty75",
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 570,
+            "y" : 0
+          }
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 795,
+            "y" : 38
+          },
+          "name" : "stripes3_duty50",
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 760,
+            "y" : 0
+          }
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 35,
+            "y" : 178
+          },
+          "name" : "stripes48_duty50",
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 0,
+            "y" : 140
+          }
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 225,
+            "y" : 178
+          },
+          "name" : "checker12",
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 190,
+            "y" : 140
+          }
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 415,
+            "y" : 178
+          },
+          "name" : "gradient_x",
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 380,
+            "y" : 140
+          }
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 605,
+            "y" : 178
+          },
+          "name" : "gradient_y",
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 570,
+            "y" : 140
+          }
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 795,
+            "y" : 178
+          },
+          "name" : "white_dots_on_black",
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 760,
+            "y" : 140
+          }
+        }
+      ],
+      "bisect" : [
+        {
+          "shapes" : [
+            {
+              "kind" : "regular",
+              "radius" : 24,
+              "rect" : {
+                "h" : 48,
+                "w" : 48,
+                "x" : 30,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 32,
+              "rect" : {
+                "h" : 64,
+                "w" : 64,
+                "x" : 100,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 20,
+              "rect" : {
+                "h" : 64,
+                "w" : 120,
+                "x" : 190,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 28,
+              "rect" : {
+                "h" : 96,
+                "w" : 200,
+                "x" : 340,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 32,
+              "rect" : {
+                "h" : 160,
+                "w" : 360,
+                "x" : 580,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "clear",
+              "radius" : 24,
+              "rect" : {
+                "h" : 48,
+                "w" : 48,
+                "x" : 30,
+                "y" : 340
+              }
+            },
+            {
+              "kind" : "clear",
+              "radius" : 32,
+              "rect" : {
+                "h" : 64,
+                "w" : 64,
+                "x" : 100,
+                "y" : 340
+              }
+            },
+            {
+              "kind" : "clear",
+              "radius" : 20,
+              "rect" : {
+                "h" : 64,
+                "w" : 120,
+                "x" : 190,
+                "y" : 340
+              }
+            },
+            {
+              "kind" : "clear",
+              "radius" : 28,
+              "rect" : {
+                "h" : 96,
+                "w" : 200,
+                "x" : 340,
+                "y" : 340
+              }
+            },
+            {
+              "kind" : "clear",
+              "radius" : 32,
+              "rect" : {
+                "h" : 160,
+                "w" : 360,
+                "x" : 580,
+                "y" : 340
+              }
+            }
+          ],
+          "stripes" : [
+            {
+              "h" : 600,
+              "w" : 1000,
+              "x" : 0,
+              "y" : 0
+            }
+          ],
+          "v" : 0
+        },
+        {
+          "shapes" : [
+            {
+              "kind" : "regular",
+              "radius" : 24,
+              "rect" : {
+                "h" : 48,
+                "w" : 48,
+                "x" : 30,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 32,
+              "rect" : {
+                "h" : 64,
+                "w" : 64,
+                "x" : 100,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 20,
+              "rect" : {
+                "h" : 64,
+                "w" : 120,
+                "x" : 190,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 28,
+              "rect" : {
+                "h" : 96,
+                "w" : 200,
+                "x" : 340,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 32,
+              "rect" : {
+                "h" : 160,
+                "w" : 360,
+                "x" : 580,
+                "y" : 70
+              }
+            }
+          ],
+          "stripes" : [
+            {
+              "h" : 600,
+              "w" : 1000,
+              "x" : 0,
+              "y" : 0
+            }
+          ],
+          "v" : 1
+        },
+        {
+          "shapes" : [
+            {
+              "kind" : "regular",
+              "radius" : 20,
+              "rect" : {
+                "h" : 64,
+                "w" : 120,
+                "x" : 190,
+                "y" : 70
+              }
+            }
+          ],
+          "stripes" : [
+            {
+              "h" : 600,
+              "w" : 1000,
+              "x" : 0,
+              "y" : 0
+            }
+          ],
+          "v" : 2
+        },
+        {
+          "shapes" : [
+            {
+              "kind" : "regular",
+              "radius" : 20,
+              "rect" : {
+                "h" : 64,
+                "w" : 120,
+                "x" : 225,
+                "y" : 38
+              }
+            }
+          ],
+          "stripes" : [
+            {
+              "h" : 600,
+              "w" : 1000,
+              "x" : 0,
+              "y" : 0
+            }
+          ],
+          "v" : 3
+        },
+        {
+          "shapes" : [
+            {
+              "kind" : "regular",
+              "radius" : 20,
+              "rect" : {
+                "h" : 64,
+                "w" : 120,
+                "x" : 30,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 20,
+              "rect" : {
+                "h" : 64,
+                "w" : 120,
+                "x" : 190,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 20,
+              "rect" : {
+                "h" : 64,
+                "w" : 120,
+                "x" : 350,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 20,
+              "rect" : {
+                "h" : 64,
+                "w" : 120,
+                "x" : 510,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 20,
+              "rect" : {
+                "h" : 64,
+                "w" : 120,
+                "x" : 670,
+                "y" : 70
+              }
+            }
+          ],
+          "stripes" : [
+            {
+              "h" : 600,
+              "w" : 1000,
+              "x" : 0,
+              "y" : 0
+            }
+          ],
+          "v" : 4
+        },
+        {
+          "shapes" : [
+            {
+              "kind" : "regular",
+              "radius" : 24,
+              "rect" : {
+                "h" : 48,
+                "w" : 48,
+                "x" : 30,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 32,
+              "rect" : {
+                "h" : 64,
+                "w" : 64,
+                "x" : 100,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 20,
+              "rect" : {
+                "h" : 64,
+                "w" : 120,
+                "x" : 190,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 28,
+              "rect" : {
+                "h" : 96,
+                "w" : 200,
+                "x" : 340,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 32,
+              "rect" : {
+                "h" : 160,
+                "w" : 360,
+                "x" : 580,
+                "y" : 70
+              }
+            }
+          ],
+          "stripes" : [
+            {
+              "h" : 300,
+              "w" : 1000,
+              "x" : 0,
+              "y" : 0
+            }
+          ],
+          "v" : 5
+        },
+        {
+          "shapes" : [
+            {
+              "kind" : "regular",
+              "radius" : 24,
+              "rect" : {
+                "h" : 48,
+                "w" : 48,
+                "x" : 30,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 32,
+              "rect" : {
+                "h" : 64,
+                "w" : 64,
+                "x" : 100,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 20,
+              "rect" : {
+                "h" : 64,
+                "w" : 120,
+                "x" : 190,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 28,
+              "rect" : {
+                "h" : 96,
+                "w" : 200,
+                "x" : 340,
+                "y" : 70
+              }
+            },
+            {
+              "kind" : "regular",
+              "radius" : 32,
+              "rect" : {
+                "h" : 160,
+                "w" : 360,
+                "x" : 580,
+                "y" : 70
+              }
+            }
+          ],
+          "stripes" : [
+            {
+              "h" : 128,
+              "w" : 128,
+              "x" : -10,
+              "y" : 30
+            },
+            {
+              "h" : 144,
+              "w" : 144,
+              "x" : 60,
+              "y" : 30
+            },
+            {
+              "h" : 144,
+              "w" : 200,
+              "x" : 150,
+              "y" : 30
+            },
+            {
+              "h" : 176,
+              "w" : 280,
+              "x" : 300,
+              "y" : 30
+            },
+            {
+              "h" : 240,
+              "w" : 440,
+              "x" : 540,
+              "y" : 30
+            }
+          ],
+          "v" : 6
+        }
+      ],
+      "btnGlassOrigin" : {
+        "x" : 810,
+        "y" : 305
+      },
+      "btnProminentOrigin" : {
+        "x" : 810,
+        "y" : 355
+      },
+      "ctx" : [
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 20,
+            "y" : 118
+          },
+          "name" : "patch_margin_0",
+          "patch" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 20,
+            "y" : 118
+          }
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 170,
+            "y" : 118
+          },
+          "name" : "patch_margin_10",
+          "patch" : {
+            "h" : 84,
+            "w" : 140,
+            "x" : 160,
+            "y" : 108
+          }
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 340,
+            "y" : 118
+          },
+          "name" : "patch_margin_20",
+          "patch" : {
+            "h" : 104,
+            "w" : 160,
+            "x" : 320,
+            "y" : 98
+          }
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 540,
+            "y" : 118
+          },
+          "name" : "patch_margin_40",
+          "patch" : {
+            "h" : 144,
+            "w" : 200,
+            "x" : 500,
+            "y" : 78
+          }
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 800,
+            "y" : 118
+          },
+          "name" : "patch_margin_80",
+          "patch" : {
+            "h" : 224,
+            "w" : 280,
+            "x" : 720,
+            "y" : 38
+          }
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 60,
+            "y" : 420
+          },
+          "kind" : "regular",
+          "name" : "band_alone"
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 240,
+            "y" : 420
+          },
+          "kind" : "regular",
+          "name" : "band_pair_a"
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 380,
+            "y" : 420
+          },
+          "kind" : "regular",
+          "name" : "band_pair_b"
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 560,
+            "y" : 420
+          },
+          "kind" : "regular",
+          "name" : "band_regular_next_to_clear"
+        },
+        {
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 700,
+            "y" : 420
+          },
+          "kind" : "clear",
+          "name" : "band_clear_next_to_regular"
+        }
+      ],
+      "greyClear" : {
+        "h" : 64,
+        "w" : 120,
+        "x" : 720,
+        "y" : 380
+      },
+      "greyPanel" : {
+        "h" : 170,
+        "w" : 280,
+        "x" : 700,
+        "y" : 280
+      },
+      "greyTint" : {
+        "h" : 64,
+        "w" : 64,
+        "x" : 720,
+        "y" : 300
+      },
+      "levels" : [
+        0,
+        51,
+        77,
+        102,
+        128,
+        153,
+        178,
+        204,
+        229,
+        255
+      ],
+      "radius" : 20,
+      "sat" : [
+        {
+          "glass" : {
+            "h" : 44,
+            "w" : 70,
+            "x" : 31,
+            "y" : 428
+          },
+          "rgb" : [
+            255,
+            0,
+            0
+          ],
+          "swatch" : {
+            "h" : 140,
+            "w" : 92,
+            "x" : 20,
+            "y" : 380
+          }
+        },
+        {
+          "glass" : {
+            "h" : 44,
+            "w" : 70,
+            "x" : 123,
+            "y" : 428
+          },
+          "rgb" : [
+            0,
+            255,
+            0
+          ],
+          "swatch" : {
+            "h" : 140,
+            "w" : 92,
+            "x" : 112,
+            "y" : 380
+          }
+        },
+        {
+          "glass" : {
+            "h" : 44,
+            "w" : 70,
+            "x" : 215,
+            "y" : 428
+          },
+          "rgb" : [
+            0,
+            0,
+            255
+          ],
+          "swatch" : {
+            "h" : 140,
+            "w" : 92,
+            "x" : 204,
+            "y" : 380
+          }
+        },
+        {
+          "glass" : {
+            "h" : 44,
+            "w" : 70,
+            "x" : 307,
+            "y" : 428
+          },
+          "rgb" : [
+            255,
+            255,
+            0
+          ],
+          "swatch" : {
+            "h" : 140,
+            "w" : 92,
+            "x" : 296,
+            "y" : 380
+          }
+        }
+      ],
+      "shadowBig" : {
+        "h" : 96,
+        "w" : 200,
+        "x" : 105,
+        "y" : 207
+      },
+      "shadowPanel" : {
+        "h" : 210,
+        "w" : 370,
+        "x" : 20,
+        "y" : 150
+      },
+      "shadowPanel2" : {
+        "h" : 170,
+        "w" : 260,
+        "x" : 420,
+        "y" : 280
+      },
+      "shadowSmall" : {
+        "h" : 64,
+        "w" : 120,
+        "x" : 490,
+        "y" : 333
+      },
+      "sizes" : [
+        {
+          "kind" : "regular",
+          "radius" : 24,
+          "rect" : {
+            "h" : 48,
+            "w" : 48,
+            "x" : 30,
+            "y" : 70
+          }
+        },
+        {
+          "kind" : "clear",
+          "radius" : 24,
+          "rect" : {
+            "h" : 48,
+            "w" : 48,
+            "x" : 30,
+            "y" : 340
+          }
+        },
+        {
+          "kind" : "regular",
+          "radius" : 32,
+          "rect" : {
+            "h" : 64,
+            "w" : 64,
+            "x" : 100,
+            "y" : 70
+          }
+        },
+        {
+          "kind" : "clear",
+          "radius" : 32,
+          "rect" : {
+            "h" : 64,
+            "w" : 64,
+            "x" : 100,
+            "y" : 340
+          }
+        },
+        {
+          "kind" : "regular",
+          "radius" : 20,
+          "rect" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 190,
+            "y" : 70
+          }
+        },
+        {
+          "kind" : "clear",
+          "radius" : 20,
+          "rect" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 190,
+            "y" : 340
+          }
+        },
+        {
+          "kind" : "regular",
+          "radius" : 28,
+          "rect" : {
+            "h" : 96,
+            "w" : 200,
+            "x" : 340,
+            "y" : 70
+          }
+        },
+        {
+          "kind" : "clear",
+          "radius" : 28,
+          "rect" : {
+            "h" : 96,
+            "w" : 200,
+            "x" : 340,
+            "y" : 340
+          }
+        },
+        {
+          "kind" : "regular",
+          "radius" : 32,
+          "rect" : {
+            "h" : 160,
+            "w" : 360,
+            "x" : 580,
+            "y" : 70
+          }
+        },
+        {
+          "kind" : "clear",
+          "radius" : 32,
+          "rect" : {
+            "h" : 160,
+            "w" : 360,
+            "x" : 580,
+            "y" : 340
+          }
+        }
+      ],
+      "stepC" : {
+        "h" : 112,
+        "w" : 400,
+        "x" : 420,
+        "y" : 150
+      },
+      "stepGlassC" : {
+        "h" : 64,
+        "w" : 120,
+        "x" : 560,
+        "y" : 174
+      },
+      "stepGlassR" : {
+        "h" : 64,
+        "w" : 120,
+        "x" : 560,
+        "y" : 44
+      },
+      "stepR" : {
+        "h" : 112,
+        "w" : 400,
+        "x" : 420,
+        "y" : 20
+      },
+      "stripeClear" : {
+        "h" : 64,
+        "w" : 120,
+        "x" : 173,
+        "y" : 44
+      },
+      "stripeRegular" : {
+        "h" : 64,
+        "w" : 120,
+        "x" : 37,
+        "y" : 44
+      },
+      "stripes" : {
+        "h" : 112,
+        "w" : 370,
+        "x" : 20,
+        "y" : 20
+      },
+      "stripeTint" : {
+        "h" : 64,
+        "w" : 64,
+        "x" : 309,
+        "y" : 44
+      },
+      "stripeWidth" : 12,
+      "tiles" : [
+        {
+          "col" : 0,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 35,
+            "y" : 38
+          },
+          "kind" : "regular",
+          "level" : 0,
+          "row" : 0,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 0,
+            "y" : 0
+          }
+        },
+        {
+          "col" : 1,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 225,
+            "y" : 38
+          },
+          "kind" : "regular",
+          "level" : 51,
+          "row" : 0,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 190,
+            "y" : 0
+          }
+        },
+        {
+          "col" : 2,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 415,
+            "y" : 38
+          },
+          "kind" : "regular",
+          "level" : 77,
+          "row" : 0,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 380,
+            "y" : 0
+          }
+        },
+        {
+          "col" : 3,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 605,
+            "y" : 38
+          },
+          "kind" : "regular",
+          "level" : 102,
+          "row" : 0,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 570,
+            "y" : 0
+          }
+        },
+        {
+          "col" : 4,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 795,
+            "y" : 38
+          },
+          "kind" : "regular",
+          "level" : 128,
+          "row" : 0,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 760,
+            "y" : 0
+          }
+        },
+        {
+          "col" : 0,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 35,
+            "y" : 178
+          },
+          "kind" : "regular",
+          "level" : 153,
+          "row" : 1,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 0,
+            "y" : 140
+          }
+        },
+        {
+          "col" : 1,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 225,
+            "y" : 178
+          },
+          "kind" : "regular",
+          "level" : 178,
+          "row" : 1,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 190,
+            "y" : 140
+          }
+        },
+        {
+          "col" : 2,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 415,
+            "y" : 178
+          },
+          "kind" : "regular",
+          "level" : 204,
+          "row" : 1,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 380,
+            "y" : 140
+          }
+        },
+        {
+          "col" : 3,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 605,
+            "y" : 178
+          },
+          "kind" : "regular",
+          "level" : 229,
+          "row" : 1,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 570,
+            "y" : 140
+          }
+        },
+        {
+          "col" : 4,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 795,
+            "y" : 178
+          },
+          "kind" : "regular",
+          "level" : 255,
+          "row" : 1,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 760,
+            "y" : 140
+          }
+        },
+        {
+          "col" : 0,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 35,
+            "y" : 318
+          },
+          "kind" : "clear",
+          "level" : 0,
+          "row" : 2,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 0,
+            "y" : 280
+          }
+        },
+        {
+          "col" : 1,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 225,
+            "y" : 318
+          },
+          "kind" : "clear",
+          "level" : 51,
+          "row" : 2,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 190,
+            "y" : 280
+          }
+        },
+        {
+          "col" : 2,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 415,
+            "y" : 318
+          },
+          "kind" : "clear",
+          "level" : 77,
+          "row" : 2,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 380,
+            "y" : 280
+          }
+        },
+        {
+          "col" : 3,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 605,
+            "y" : 318
+          },
+          "kind" : "clear",
+          "level" : 102,
+          "row" : 2,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 570,
+            "y" : 280
+          }
+        },
+        {
+          "col" : 4,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 795,
+            "y" : 318
+          },
+          "kind" : "clear",
+          "level" : 128,
+          "row" : 2,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 760,
+            "y" : 280
+          }
+        },
+        {
+          "col" : 0,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 35,
+            "y" : 458
+          },
+          "kind" : "clear",
+          "level" : 153,
+          "row" : 3,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 0,
+            "y" : 420
+          }
+        },
+        {
+          "col" : 1,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 225,
+            "y" : 458
+          },
+          "kind" : "clear",
+          "level" : 178,
+          "row" : 3,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 190,
+            "y" : 420
+          }
+        },
+        {
+          "col" : 2,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 415,
+            "y" : 458
+          },
+          "kind" : "clear",
+          "level" : 204,
+          "row" : 3,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 380,
+            "y" : 420
+          }
+        },
+        {
+          "col" : 3,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 605,
+            "y" : 458
+          },
+          "kind" : "clear",
+          "level" : 229,
+          "row" : 3,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 570,
+            "y" : 420
+          }
+        },
+        {
+          "col" : 4,
+          "glass" : {
+            "h" : 64,
+            "w" : 120,
+            "x" : 795,
+            "y" : 458
+          },
+          "kind" : "clear",
+          "level" : 255,
+          "row" : 3,
+          "tile" : {
+            "h" : 140,
+            "w" : 190,
+            "x" : 760,
+            "y" : 420
+          }
+        }
+      ]
+    },
+    "origin" : {
+      "x" : 12,
+      "y" : 44
+    },
+    "screens" : [
+      {
+        "colorSpace" : "Apple Virtual",
+        "frame" : {
+          "h" : 768,
+          "w" : 1024,
+          "x" : 0,
+          "y" : 0
+        },
+        "scale" : 1,
+        "visibleFrame" : {
+          "h" : 678,
+          "w" : 1024,
+          "x" : 0,
+          "y" : 30
+        }
+      }
+    ]
+  },
+  "scene" : "glasstime",
+  "schema_version" : 1,
+  "screens" : [
+    {
+      "colorSpace" : "Apple Virtual",
+      "frame" : {
+        "h" : 768,
+        "w" : 1024,
+        "x" : 0,
+        "y" : 0
+      },
+      "scale" : 1,
+      "visibleFrame" : {
+        "h" : 678,
+        "w" : 1024,
+        "x" : 0,
+        "y" : 30
+      }
+    }
+  ],
+  "shots" : [
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-fresh-2.png",
+      "name" : "fresh-2",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-fresh-6.png",
+      "name" : "fresh-6",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-fresh-12.png",
+      "name" : "fresh-12",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-fresh-25.png",
+      "name" : "fresh-25",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-fresh-50.png",
+      "name" : "fresh-50",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-fresh-90.png",
+      "name" : "fresh-90",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-flat-page.png",
+      "name" : "flat-page",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-again-2.png",
+      "name" : "again-2",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-again-6.png",
+      "name" : "again-6",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-again-12.png",
+      "name" : "again-12",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-again-25.png",
+      "name" : "again-25",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-again-50.png",
+      "name" : "again-50",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-again-90.png",
+      "name" : "again-90",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-v1-2.png",
+      "name" : "v1-2",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-v1-6.png",
+      "name" : "v1-6",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-v1-12.png",
+      "name" : "v1-12",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-v1-25.png",
+      "name" : "v1-25",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-v1-50.png",
+      "name" : "v1-50",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    },
+    {
+      "cg" : [
+        {
+          "alpha" : 1,
+          "bounds" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "layer" : 0,
+          "name" : "",
+          "number" : 57
+        }
+      ],
+      "file" : "glasstime-dark-normal-v1-90.png",
+      "name" : "v1-90",
+      "status" : 0,
+      "windows" : {
+        "inwindow" : {
+          "contentLayout" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "contentView" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "frame" : {
+            "h" : 600,
+            "w" : 1000,
+            "x" : 12,
+            "y" : 44
+          },
+          "isKey" : true,
+          "isMain" : true,
+          "level" : 0,
+          "number" : 57,
+          "title" : ""
+        }
+      }
+    }
+  ],
+  "variant" : "normal"
+}
