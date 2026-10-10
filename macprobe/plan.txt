@@ -1,3 +1,3 @@
 # <scene> <light|dark> <variant>
-glass light normal
-glass dark normal
+glasstime light normal
+glasstime dark normal

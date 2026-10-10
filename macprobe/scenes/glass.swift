@@ -1,4 +1,4 @@
-// SCENES: glass
+// SCENES: glass glasstime
 // The glass material on macOS 26 over known backdrops, in the two situations that
 // exist on a desktop:
 //   in-window     glass over content of the SAME window (SwiftUI .glassEffect)
@@ -572,4 +572,40 @@ func scene_glass(_ ctx: Ctx) async {
         await ctx.pause(1.5)
         ctx.shot("ctl-bisect\(v)")
     }
+}
+
+
+/// Is the regular glass's tone over full-window stripes a function of TIME or of history? One
+/// page (the lone 120 x 64 of bisect variant 2) is captured at several delays after it appears,
+/// first in a fresh process, then after a flat page, then again; the shot names carry the delay.
+@MainActor
+func scene_glasstime(_ ctx: Ctx) async {
+    ctx.notes["layout"] = glassLayout()
+    ctx.notes["origin"] = ["x": 12.0, "y": 44.0]
+    let inw = ctx.borderless("inwindow", 12, 44, 1000, 600, opaque: true)
+    inw.backgroundColor = gray(60)
+    let host = NSHostingView(rootView: GlassPage(kind: "bisect", panels: true, glass: true, v: 2))
+    inw.contentView = host
+    inw.makeKeyAndOrderFront(nil)
+    NSApp.activate(ignoringOtherApps: true)
+    var clock: [String: Any] = [:]
+    func series(_ tag: String) async {
+        let start = Date()
+        for delay in [0.2, 0.6, 1.2, 2.5, 5.0, 9.0] {
+            let wait = delay - Date().timeIntervalSince(start)
+            if wait > 0 { await ctx.pause(wait) }
+            let name = "\(tag)-\(Int(delay * 10))"
+            ctx.shot(name)
+            clock[name] = Date().timeIntervalSince(start)
+        }
+    }
+    await series("fresh")
+    host.rootView = GlassPage(kind: "adapt", panels: true, glass: true)
+    await ctx.pause(3.0)
+    ctx.shot("flat-page")
+    host.rootView = GlassPage(kind: "bisect", panels: true, glass: true, v: 2)
+    await series("again")
+    host.rootView = GlassPage(kind: "bisect", panels: true, glass: true, v: 1)
+    await series("v1")
+    ctx.notes["clock"] = clock
 }
