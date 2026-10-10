@@ -2,7 +2,7 @@ name: macprobe
 on:
   push:
     branches: [main]
-    paths: ['macprobe/**', '.github/workflows/macprobe.yml']
+    paths: ['macprobe/**', '.github/workflows/macprobe*.yml']
   workflow_dispatch:
 
 permissions:
@@ -15,37 +15,23 @@ concurrency:
 jobs:
   macprobe:
     runs-on: macos-26
-    timeout-minutes: 20
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
       - name: Environment
         run: |
           OUT="$RUNNER_TEMP/out"
+          B="$RUNNER_TEMP/b"
           echo "OUT=$OUT" >> "$GITHUB_ENV"
-          mkdir -p "$OUT"
-          { sw_vers; xcodebuild -version; system_profiler SPDisplaysDataType | head -30; } | tee "$OUT/env.txt"
-      - name: Build
-        run: |
-          swiftc -swift-version 5 -parse-as-library -O macprobe/App.swift -o "$RUNNER_TEMP/MacProbe" 2>&1 | tee "$OUT/build.txt"
-      - name: Wallpaper (try to pin it)
-        continue-on-error: true
-        run: |
-          {
-            ls /System/Library/Desktop\ Pictures | head -20
-            osascript -e 'tell application "System Events" to tell every desktop to get picture' 2>&1 || true
-          } | tee "$OUT/wallpaper.txt"
-      - name: Run and capture
-        run: |
-          "$RUNNER_TEMP/MacProbe" > "$OUT/probe.txt" 2>&1 &
-          for i in $(seq 1 30); do [ -f "$OUT/ready" ] && break; sleep 1; done
-          cat "$OUT/probe.txt"
-          # Methods that need the window server (they see the glass if it is composited):
-          screencapture -x "$OUT/full-screen.png" 2>&1 | tee -a "$OUT/capture.txt" || true
-          for n in $(grep '^WINDOW' "$OUT/probe.txt" | awk '{print $3}'); do
-            screencapture -x -l "$n" "$OUT/screencapture-l-$n.png" 2>&1 | tee -a "$OUT/capture.txt" || true
-          done
-          ls -la "$OUT" | tee -a "$OUT/capture.txt"
-          pkill MacProbe || true
+          echo "B=$B" >> "$GITHUB_ENV"
+          mkdir -p "$OUT" "$B"
+          { sw_vers; xcodebuild -version; uname -m; system_profiler SPDisplaysDataType | head -30; } | tee "$OUT/env.txt"
+      - name: Build (one binary per scene file)
+        run: bash macprobe/build.sh
+      - name: Run the plan
+        run: bash macprobe/run.sh macprobe/plan.txt
+      # Results go to the orphan branch results-mac (force-pushed each run), so they
+      # can be fetched with plain git, no API token needed.
       - name: Publish results
         if: always()
         run: |

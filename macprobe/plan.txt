@@ -1,0 +1,24 @@
+# <scene> <light|dark> <variant>
+chrome light normal
+chrome dark normal
+chrome light compat
+sidebar light normal
+sidebar dark normal
+sidebar light compat
+sidebar_swiftui light normal
+sidebar_swiftui dark normal
+controls light normal
+controls dark normal
+controls light compat
+controls26 light normal
+controls26 dark normal
+glass light normal
+glass dark normal
+glass light reduceTransparency
+overlays light normal
+overlays dark normal
+states light normal
+states dark normal
+states light fka
+showcase light normal
+showcase dark normal
