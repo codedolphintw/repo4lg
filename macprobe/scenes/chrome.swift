@@ -33,6 +33,17 @@ final class TBDelegate: NSObject, NSToolbarDelegate {
 @MainActor
 func tbid(_ s: String) -> NSToolbarItem.Identifier { NSToolbarItem.Identifier(rawValue: s) }
 
+/// First view of class `cls` in a Ctx.dump tree, as a CGRect in top-left screen pixels.
+func treeFrame(_ node: [String: Any], _ cls: String) -> CGRect? {
+    if (node["class"] as? String) == cls, let f = node["frame"] as? [String: Double] {
+        return CGRect(x: f["x"] ?? 0, y: f["y"] ?? 0, width: f["w"] ?? 0, height: f["h"] ?? 0)
+    }
+    for c in (node["children"] as? [[String: Any]]) ?? [] {
+        if let r = treeFrame(c, cls) { return r }
+    }
+    return nil
+}
+
 @MainActor
 func scene_chrome(_ ctx: Ctx) async {
     ctx.backdrop(gray: 192)
@@ -96,6 +107,22 @@ func scene_chrome(_ ctx: Ctx) async {
             await ctx.pause(0.8)
             ctx.shot("w-unified-hover-lights", windows: [(name, w)])
             pointerMove(to: CGPoint(x: 1000, y: 700))
+            // A toolbar button: hover, then pressed.
+            if let tf = w.contentView?.superview, let r = treeFrame(ctx.dump(tf, maxDepth: 6), "NSToolbarButton") {
+                let c = CGPoint(x: r.midX, y: r.midY)
+                pointerMove(to: c)
+                await ctx.pause(0.3)
+                pointerMove(to: CGPoint(x: c.x + 1, y: c.y))
+                await ctx.pause(0.8)
+                ctx.shot("w-unified-hover-tool", windows: [(name, w)])
+                pointerButton(at: c, down: true)
+                await ctx.pause(0.8)
+                ctx.shot("w-unified-press-tool", windows: [(name, w)])
+                pointerButton(at: c, down: false)
+                await ctx.pause(0.5)
+                ctx.notes["tool_button"] = ["x": Double(r.minX), "y": Double(r.minY), "w": Double(r.width), "h": Double(r.height)]
+                pointerMove(to: CGPoint(x: 1000, y: 700))
+            }
         }
     }
     // The first window again, now that another window is key.
@@ -191,6 +218,23 @@ func scene_sidebar(_ ctx: Ctx) async {
     ctx.notes["sidebar"] = side
     ctx.shot("split", windows: [("split", w)])
     if let frame = w.contentView?.superview { ctx.notes["tree-split"] = ctx.dump(frame, maxDepth: 6) }
+    // Hover and press on a sidebar row (row 3), and hover on the sidebar toggle.
+    if rows.count > 3, let rx = rows[3]["x"], let ry = rows[3]["y"], let rw = rows[3]["w"], let rh = rows[3]["h"] {
+        let c = CGPoint(x: rx + min(rw, 120) / 2, y: ry + rh / 2)
+        pointerMove(to: c)
+        await ctx.pause(0.3)
+        pointerMove(to: CGPoint(x: c.x + 1, y: c.y))
+        await ctx.pause(0.8)
+        ctx.shot("split-hover-row", windows: [("split", w)])
+        pointerButton(at: c, down: true)
+        await ctx.pause(0.8)
+        ctx.shot("split-press-row", windows: [("split", w)])
+        pointerButton(at: c, down: false)
+        await ctx.pause(0.8)
+        pointerMove(to: CGPoint(x: 1000, y: 700))
+        table.selectRowIndexes(IndexSet(integer: 1), byExtendingSelection: false)
+        await ctx.pause(0.8)
+    }
     // Flat content: the sidebar's and toolbar's own outlines are easy to measure on it.
     box.stripes = false
     mainVC.view.needsDisplay = true
