@@ -34,14 +34,15 @@ enum GL {
     static let stepC = CGRect(x: 420, y: 150, width: 400, height: 112)
     static let stepGlassR = CGRect(x: 560, y: 44, width: 120, height: 64)
     static let stepGlassC = CGRect(x: 560, y: 174, width: 120, height: 64)
-    static let shadowPanel = CGRect(x: 20, y: 160, width: 370, height: 200)
-    static let shadowSmall = CGRect(x: 40, y: 228, width: 120, height: 64)
-    static let shadowBig = CGRect(x: 170, y: 212, width: 200, height: 96)
-    static let greyPanel = CGRect(x: 420, y: 290, width: 400, height: 170)
-    static let greyTint = CGRect(x: 440, y: 310, width: 64, height: 64)
-    static let greyClear = CGRect(x: 440, y: 390, width: 120, height: 64)
-    static let btnGlass = CGPoint(x: 540, y: 325)
-    static let btnProminent = CGPoint(x: 650, y: 325)
+    static let shadowPanel = CGRect(x: 20, y: 150, width: 370, height: 210)
+    static let shadowBig = CGRect(x: 105, y: 207, width: 200, height: 96)
+    static let shadowPanel2 = CGRect(x: 420, y: 280, width: 260, height: 170)
+    static let shadowSmall = CGRect(x: 490, y: 333, width: 120, height: 64)
+    static let greyPanel = CGRect(x: 700, y: 280, width: 280, height: 170)
+    static let greyTint = CGRect(x: 720, y: 300, width: 64, height: 64)
+    static let greyClear = CGRect(x: 720, y: 380, width: 120, height: 64)
+    static let btnGlass = CGPoint(x: 810, y: 305)
+    static let btnProminent = CGPoint(x: 810, y: 355)
     static let satColors: [(Int, Int, Int)] = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0)]
     static func satSwatch(_ i: Int) -> CGRect { CGRect(x: 20 + CGFloat(i) * 92, y: 380, width: 92, height: 140) }
     static func satGlass(_ i: Int) -> CGRect {
@@ -120,6 +121,7 @@ struct MiscPanels: View {
             fillRect(CGRect(x: GL.stepC.minX, y: GL.stepC.minY, width: 200, height: 112), Color.black)
             fillRect(CGRect(x: GL.stepC.minX + 200, y: GL.stepC.minY, width: 200, height: 112), Color.white)
             fillRect(GL.shadowPanel, Color.white)
+            fillRect(GL.shadowPanel2, Color.white)
             fillRect(GL.greyPanel, Color(.sRGB, white: 128.0 / 255, opacity: 1))
             ForEach(0..<4, id: \.self) { i in
                 fillRect(GL.satSwatch(i), Color(.sRGB, red: Double(GL.satColors[i].0) / 255,
@@ -205,6 +207,7 @@ func glassLayout() -> [String: Any] {
     L["stepGlassR"] = rj(GL.stepGlassR)
     L["stepGlassC"] = rj(GL.stepGlassC)
     L["shadowPanel"] = rj(GL.shadowPanel)
+    L["shadowPanel2"] = rj(GL.shadowPanel2)
     L["shadowSmall"] = rj(GL.shadowSmall)
     L["shadowBig"] = rj(GL.shadowBig)
     L["greyPanel"] = rj(GL.greyPanel)

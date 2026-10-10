@@ -71,7 +71,7 @@ func ctlRowsA() -> [CtlRow] {
 func ctlRowsB() -> [CtlRow] {
     [
         CtlRow(name: "segmented", width: nil) {
-            let s = NSSegmentedControl(labels: ["One", "Two", "Three"], trackingMode: .selectOne, target: nil, action: nil)
+            let s = NSSegmentedControl(labels: ["One", "Two"], trackingMode: .selectOne, target: nil, action: nil)
             s.selectedSegment = 1
             return s
         },

@@ -94,21 +94,32 @@ func scene_overlays(_ ctx: Ctx) async {
     await ctx.pause(1.5)
     ctx.shot("host")
 
-    // 1. Context menu.
+    // 1. Context menu. The blocking call is made from a run-loop timer (runBlocking);
+    //    the shots and pointer moves are main-queue blocks that run while it tracks.
     let m = ovMakeMenu(t)
-    ctx.later(1.3) {
+    ctx.later(1.2) {
         ctx.shot("menu")
-        m.cancelTracking()
+        if let b = ovMenuBounds(ctx) {
+            pointerMove(to: CGPoint(x: b.minX + 60, y: b.minY + 8 + 26 * 1.5))
+        }
     }
-    m.popUp(positioning: nil, at: NSPoint(x: 60, y: 140), in: content)
+    ctx.later(2.2) { ctx.shot("menu-hover-2") }
+    ctx.later(2.4) {
+        if let b = ovMenuBounds(ctx) {
+            pointerMove(to: CGPoint(x: b.minX + 60, y: b.minY + 8 + 26 * 2 + 14 + 13))
+        }
+    }
+    ctx.later(3.8) { ctx.shot("menu-hover-share") }
+    ctx.later(4.2) { m.cancelTracking() }
+    await runBlocking { _ = m.popUp(positioning: nil, at: NSPoint(x: 60, y: 140), in: content) }
     await ctx.pause(0.8)
 
     // 2. Pop-up button's own menu.
-    ctx.later(1.3) {
+    ctx.later(1.2) {
         ctx.shot("popup-open")
         popup.menu?.cancelTracking()
     }
-    popup.performClick(nil)
+    await runBlocking { popup.performClick(nil) }
     await ctx.pause(0.8)
 
     // 3. Popover.
@@ -163,30 +174,34 @@ func scene_overlays(_ ctx: Ctx) async {
         ctx.shot("alert-modal", windows: [("alert-modal", a2.window)])
         NSApp.abortModal()
     }
-    _ = a2.runModal()
+    await runBlocking { _ = a2.runModal() }
     await ctx.pause(1.0)
 
-    // 7. Tooltip: needs the pointer over the button. Warping the cursor and posting a
-    //    synthetic move is tried; the JSON records where the pointer ended up.
+    // 7. Tooltip: the pointer rests over the button (synthetic events are delivered
+    //    on the runner: the JSON records where the pointer ended up).
     host.makeKeyAndOrderFront(nil)
     await ctx.pause(0.5)
-    let inWindow = btn.convert(NSPoint(x: 50, y: 14), to: nil)
-    let onScreen = host.convertPoint(toScreen: inWindow)
-    let cg = CGPoint(x: onScreen.x, y: screenHeight() - onScreen.y)
-    CGWarpMouseCursorPosition(cg)
-    if let ev = CGEvent(mouseEventSource: nil, mouseType: .mouseMoved, mouseCursorPosition: cg, mouseButton: .left) {
-        ev.post(tap: .cghidEventTap)
-    }
+    let target = centerOf(btn)
+    pointerMove(to: target)
     await ctx.pause(0.3)
-    let cg2 = CGPoint(x: cg.x + 2, y: cg.y + 1)
-    if let ev = CGEvent(mouseEventSource: nil, mouseType: .mouseMoved, mouseCursorPosition: cg2, mouseButton: .left) {
-        ev.post(tap: .cghidEventTap)
-    }
+    pointerMove(to: CGPoint(x: target.x + 2, y: target.y + 1))
     await ctx.pause(3.0)
     let loc = NSEvent.mouseLocation
     var mouse: [String: Any] = [:]
-    mouse["asked"] = ["x": Double(cg.x), "y": Double(cg.y)]
+    mouse["asked"] = ["x": Double(target.x), "y": Double(target.y)]
     mouse["got"] = ["x": Double(loc.x), "y": Double(screenHeight() - loc.y)]
     ctx.notes["mouse"] = mouse
     ctx.shot("tooltip")
+}
+
+/// Bounds of the topmost menu window of this process (top-left screen pixels).
+@MainActor
+func ovMenuBounds(_ ctx: Ctx) -> CGRect? {
+    var best: CGRect?
+    for w in cgWindowsOfProcess() {
+        guard let layer = w["layer"] as? Int, layer >= 100, let b = w["bounds"] as? [String: Double] else { continue }
+        let r = CGRect(x: b["x"] ?? 0, y: b["y"] ?? 0, width: b["w"] ?? 0, height: b["h"] ?? 0)
+        if r.width > 60 && r.height > 60 { best = best.map { $0.height < r.height ? r : $0 } ?? r }
+    }
+    return best
 }

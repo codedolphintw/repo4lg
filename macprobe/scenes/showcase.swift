@@ -220,5 +220,29 @@ func scene_showcase(_ ctx: Ctx) async {
         info["host"] = viewFrame(host)
         ctx.notes["page-\(page)"] = info
         ctx.shot("page-\(page)", windows: [("Showcase", w)])
+        if page == "a" { await showHoverPress(ctx, host, FrameStore.frames) }
     }
+}
+
+/// Pointer over a control (hover), then the left button held (pressed), then released.
+@MainActor
+func showHoverPress(_ ctx: Ctx, _ host: NSView, _ frames: [String: CGRect]) async {
+    let origin = screenRect(of: host)
+    let top = screenHeight() - origin.maxY
+    let targets = ["btn-bordered", "btn-glass", "btn-glass-prominent", "icon-glass", "switch-off", "checkbox-off", "segmented", "slider"]
+    for n in targets {
+        guard let r = frames[n] else { continue }
+        let p = CGPoint(x: origin.minX + r.midX, y: top + r.midY)
+        pointerMove(to: p)
+        await ctx.pause(0.3)
+        pointerMove(to: CGPoint(x: p.x + 1, y: p.y))
+        await ctx.pause(0.8)
+        ctx.shot("hover-\(n)")
+        pointerButton(at: p, down: true)
+        await ctx.pause(0.8)
+        ctx.shot("press-\(n)")
+        pointerButton(at: p, down: false)
+        await ctx.pause(0.6)
+    }
+    pointerMove(to: CGPoint(x: 1000, y: 700))
 }

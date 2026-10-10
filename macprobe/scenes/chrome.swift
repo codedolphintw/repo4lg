@@ -49,21 +49,21 @@ func scene_chrome(_ ctx: Ctx) async {
         Def(name: "preference", style: .preference, full: false),
         Def(name: "fullsize", style: .unified, full: true),
     ]
-    let colX: [CGFloat] = [12, 362, 712]
-    let rowY: [CGFloat] = [48, 372]
+    let colX: [CGFloat] = [10, 350, 690]
+    let rowTop: [CGFloat] = [40, 380]
     var wins: [(String, NSWindow)] = []
     for (i, d) in defs.enumerated() {
         var style: NSWindow.StyleMask = [.titled, .closable, .miniaturizable, .resizable]
         if d.full { style.insert(.fullSizeContentView) }
-        let w = ctx.titled(d.name, colX[i % 3], rowY[i / 3], 300, 270, style: style)
+        let w = ctx.titledContent(d.name, 330, 200, style: style)
         let full = d.full
-        w.contentView = DrawView(frame: NSRect(x: 0, y: 0, width: 300, height: 240)) { r in
+        w.contentView = DrawView(frame: NSRect(x: 0, y: 0, width: 330, height: 200)) { r in
             if full {
-                paintStripes(r, width: 16, colors: rainbow)
+                rgb(255, 149, 0).setFill()
             } else {
                 NSColor.windowBackgroundColor.setFill()
-                r.fill()
             }
+            r.fill()
         }
         if let st = d.style {
             let ids: [NSToolbarItem.Identifier] = [tbid("add"), tbid("share"), .space, tbid("more"), .flexibleSpace, tbid("search")]
@@ -75,6 +75,7 @@ func scene_chrome(_ ctx: Ctx) async {
             w.toolbar = tb
             w.toolbarStyle = st
         }
+        w.setFrameTopLeftPoint(NSPoint(x: colX[i % 3], y: screenHeight() - rowTop[i / 3]))
         w.orderFront(nil)
         wins.append((d.name, w))
     }
@@ -84,6 +85,15 @@ func scene_chrome(_ ctx: Ctx) async {
         w.makeKeyAndOrderFront(nil)
         await ctx.pause(1.0)
         ctx.shot("w-\(name)", windows: [(name, w)])
+        if name == "unified", let close = w.standardWindowButton(.closeButton) {
+            // The pointer over the traffic lights makes their glyphs appear.
+            pointerMove(to: centerOf(close))
+            await ctx.pause(0.3)
+            pointerMove(to: CGPoint(x: centerOf(close).x + 1, y: centerOf(close).y))
+            await ctx.pause(0.8)
+            ctx.shot("w-unified-hover-lights", windows: [(name, w)])
+            pointerMove(to: CGPoint(x: 1000, y: 700))
+        }
     }
     // The first window again, now that another window is key.
     ctx.shot("w-plain-inactive", windows: [wins[0]])
@@ -112,7 +122,14 @@ final class SideData: NSObject, NSTableViewDataSource, NSTableViewDelegate {
 }
 
 @MainActor
+final class FillBox {
+    var stripes = true
+}
+
+@MainActor
 func scene_sidebar(_ ctx: Ctx) async {
+    let box = FillBox()
+    ctx.keep.append(box)
     ctx.backdrop(gray: 192)
     let data = SideData()
     ctx.keep.append(data)
@@ -135,7 +152,12 @@ func scene_sidebar(_ ctx: Ctx) async {
     let sideItem = NSSplitViewItem(sidebarWithViewController: sideVC)
     let mainVC = NSViewController()
     mainVC.view = DrawView(frame: NSRect(x: 0, y: 0, width: 600, height: 500)) { r in
-        paintStripes(r, width: 16, colors: rainbow)
+        if box.stripes {
+            paintStripes(r, width: 16, colors: rainbow)
+        } else {
+            rgb(255, 149, 0).setFill()
+            r.fill()
+        }
     }
     let mainItem = NSSplitViewItem(viewController: mainVC)
     let split = NSSplitViewController()
@@ -166,6 +188,13 @@ func scene_sidebar(_ ctx: Ctx) async {
     ctx.notes["sidebar"] = side
     ctx.shot("split", windows: [("split", w)])
     if let frame = w.contentView?.superview { ctx.notes["tree-split"] = ctx.dump(frame, maxDepth: 6) }
+    // Flat content: the sidebar's and toolbar's own outlines are easy to measure on it.
+    box.stripes = false
+    mainVC.view.needsDisplay = true
+    await ctx.pause(1.2)
+    ctx.shot("split-flat", windows: [("split", w)])
+    box.stripes = true
+    mainVC.view.needsDisplay = true
     // Collapsed sidebar: shows how the toolbar and content reflow.
     sideItem.isCollapsed = true
     await ctx.pause(1.5)

@@ -75,6 +75,15 @@ restore_variant() {
   esac
 }
 
+# The hosted runner starts with Reduce Transparency (and Reduce Motion) ON, which turns
+# every glass shape into its opaque fallback. The normal captures need it OFF; the
+# variant "reduceTransparency" switches it on for one scene and restores it OFF.
+echo "initial reduceTransparency: $(defaults read com.apple.universalaccess reduceTransparency 2>&1)" >> "$OUT/variants.txt"
+echo "initial reduceMotion: $(defaults read com.apple.universalaccess reduceMotion 2>&1)" >> "$OUT/variants.txt"
+dw com.apple.universalaccess reduceTransparency -bool false
+echo "now reduceTransparency: $(defaults read com.apple.universalaccess reduceTransparency 2>&1)" >> "$OUT/variants.txt"
+sleep 2
+
 while read -r scene appearance variant rest; do
   case "$scene" in ''|\#*) continue ;; esac
   tag="$scene-$appearance-$variant"

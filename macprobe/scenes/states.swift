@@ -124,8 +124,10 @@ func scene_states(_ ctx: Ctx) async {
     ctx.notes["colors"] = ctx.colorTable()
     ctx.shot("base")
 
+    // Accent runs only need the base page, one focus ring and the selection.
+    let short = ctx.variant.hasPrefix("accent")
     // Focus ring: first responder walked over the controls.
-    for n in ["text", "search", "push", "check-on", "popup", "segmented", "slider"] {
+    for n in (short ? ["text"] : ["text", "search", "push", "check-on", "popup", "segmented", "slider"]) {
         guard let v = views[n] else { continue }
         w.makeFirstResponder(v)
         await ctx.pause(0.7)
@@ -139,6 +141,7 @@ func scene_states(_ ctx: Ctx) async {
     }
     w.makeFirstResponder(nil)
 
+    if short { return }
     // Hover.
     let counter = MoveCounter()
     ctx.keep.append(counter)

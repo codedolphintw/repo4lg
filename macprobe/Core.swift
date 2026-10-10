@@ -112,6 +112,67 @@ func runTool(_ path: String, _ args: [String]) -> Int32 {
     return p.terminationStatus
 }
 
+/// Window-server list restricted to this process (no actor state: callable anywhere).
+func cgWindowsOfProcess() -> [[String: Any]] {
+    let pid = Int(ProcessInfo.processInfo.processIdentifier)
+    guard let list = CGWindowListCopyWindowInfo([.optionOnScreenOnly], kCGNullWindowID) as? [[String: Any]] else { return [] }
+    var res: [[String: Any]] = []
+    for w in list {
+        guard let opid = (w["kCGWindowOwnerPID"] as? NSNumber)?.intValue, opid == pid else { continue }
+        var d: [String: Any] = [:]
+        d["number"] = (w["kCGWindowNumber"] as? NSNumber)?.intValue ?? -1
+        d["layer"] = (w["kCGWindowLayer"] as? NSNumber)?.intValue ?? -1
+        d["alpha"] = (w["kCGWindowAlpha"] as? NSNumber)?.doubleValue ?? -1.0
+        d["name"] = (w["kCGWindowName"] as? String) ?? ""
+        if let b = w["kCGWindowBounds"] as? NSDictionary, let r = CGRect(dictionaryRepresentation: b as CFDictionary) {
+            d["bounds"] = ["x": q(r.minX), "y": q(r.minY), "w": q(r.width), "h": q(r.height)]
+        }
+        res.append(d)
+    }
+    return res
+}
+
+/// Menu tracking, modal alerts and similar calls block until the user dismisses
+/// them. Called from inside the scene's own task they would block the main queue
+/// that is running it (blocks scheduled with ctx.later then never run), so the
+/// blocking call is made from a run-loop timer instead: the task is suspended while
+/// it blocks and the main queue stays free. Returns after the blocking call returns.
+@MainActor
+func runBlocking(_ body: @escaping @MainActor () -> Void) async {
+    await withCheckedContinuation { (cont: CheckedContinuation<Void, Never>) in
+        let t = Timer(timeInterval: 0.05, repeats: false) { _ in
+            MainActor.assumeIsolated { body() }
+            cont.resume()
+        }
+        RunLoop.main.add(t, forMode: .common)
+    }
+}
+
+/// Synthetic pointer events (the runner lets the process post them).
+@MainActor
+func pointerMove(to p: CGPoint) {
+    CGWarpMouseCursorPosition(p)
+    if let ev = CGEvent(mouseEventSource: nil, mouseType: .mouseMoved, mouseCursorPosition: p, mouseButton: .left) {
+        ev.post(tap: .cghidEventTap)
+    }
+}
+
+@MainActor
+func pointerButton(at p: CGPoint, down: Bool) {
+    let type: CGEventType = down ? .leftMouseDown : .leftMouseUp
+    if let ev = CGEvent(mouseEventSource: nil, mouseType: type, mouseCursorPosition: p, mouseButton: .left) {
+        ev.setIntegerValueField(.mouseEventClickState, value: 1)
+        ev.post(tap: .cghidEventTap)
+    }
+}
+
+/// Screen centre (top-left origin, CGEvent coordinates) of a view.
+@MainActor
+func centerOf(_ v: NSView) -> CGPoint {
+    let r = screenRect(of: v)
+    return CGPoint(x: r.midX, y: screenHeight() - r.midY)
+}
+
 @MainActor
 final class Ctx {
     let scene: String
@@ -178,6 +239,17 @@ final class Ctx {
         return win
     }
 
+    /// Titled window with the given CONTENT size; the caller positions it with
+    /// setFrameTopLeftPoint after adding a toolbar (which makes the frame taller).
+    func titledContent(_ name: String, _ cw: CGFloat, _ ch: CGFloat,
+                       style: NSWindow.StyleMask = [.titled, .closable, .miniaturizable, .resizable]) -> NSWindow {
+        let win = NSWindow(contentRect: NSRect(x: 0, y: 0, width: cw, height: ch), styleMask: style, backing: .buffered, defer: false)
+        win.title = name
+        win.isReleasedWhenClosed = false
+        track(name, win)
+        return win
+    }
+
     /// Borderless key-capable window at the exact frame (top-left screen pixels).
     func borderless(_ name: String, _ x: CGFloat, _ y: CGFloat, _ w: CGFloat, _ h: CGFloat,
                     opaque: Bool, shadow: Bool = false) -> NSWindow {
@@ -234,24 +306,7 @@ final class Ctx {
 
     /// Windows of this process as the window server sees them (menus, popovers,
     /// tooltips, sheets included): number, layer, bounds, alpha.
-    func cgWindows() -> [[String: Any]] {
-        let pid = Int(ProcessInfo.processInfo.processIdentifier)
-        guard let list = CGWindowListCopyWindowInfo([.optionOnScreenOnly], kCGNullWindowID) as? [[String: Any]] else { return [] }
-        var res: [[String: Any]] = []
-        for w in list {
-            guard let opid = (w["kCGWindowOwnerPID"] as? NSNumber)?.intValue, opid == pid else { continue }
-            var d: [String: Any] = [:]
-            d["number"] = (w["kCGWindowNumber"] as? NSNumber)?.intValue ?? -1
-            d["layer"] = (w["kCGWindowLayer"] as? NSNumber)?.intValue ?? -1
-            d["alpha"] = (w["kCGWindowAlpha"] as? NSNumber)?.doubleValue ?? -1.0
-            d["name"] = (w["kCGWindowName"] as? String) ?? ""
-            if let b = w["kCGWindowBounds"] as? NSDictionary, let r = CGRect(dictionaryRepresentation: b as CFDictionary) {
-                d["bounds"] = ["x": q(r.minX), "y": q(r.minY), "w": q(r.width), "h": q(r.height)]
-            }
-            res.append(d)
-        }
-        return res
-    }
+    func cgWindows() -> [[String: Any]] { cgWindowsOfProcess() }
 
     // MARK: capture
 
@@ -274,6 +329,20 @@ final class Ctx {
         shots.append(rec)
         print("shot \(name) status \(status)")
         fflush(stdout)
+        flush()
+    }
+
+    /// Write the JSON so far (a hang or crash later still leaves the shots taken).
+    func flush() {
+        var root: [String: Any] = [
+            "schema_version": 1, "scene": scene, "appearance": appearance, "variant": variant,
+            "shots": shots, "notes": notes,
+        ]
+        root["screens"] = screens()
+        let obj = sanitize(root)
+        if let data = try? JSONSerialization.data(withJSONObject: obj, options: [.prettyPrinted, .sortedKeys]) {
+            try? data.write(to: URL(fileURLWithPath: "\(out)/\(tag).json"), options: .atomic)
+        }
     }
 
     // MARK: environment
@@ -350,9 +419,11 @@ final class Ctx {
     // MARK: lifecycle
 
     func begin() async {
-        later(100) {
-            self.notes["watchdog"] = true
-            self.finish()
+        // The watchdog must not depend on the main queue (a blocked menu loop would starve it).
+        DispatchQueue.global().asyncAfter(deadline: .now() + 100) {
+            fputs("watchdog: scene still running after 100 s
+", stderr)
+            exit(3)
         }
         await pause(1.5)
         notes["flags"] = flags()
@@ -360,17 +431,7 @@ final class Ctx {
     }
 
     func finish() {
-        var root: [String: Any] = [
-            "schema_version": 1, "scene": scene, "appearance": appearance, "variant": variant,
-            "shots": shots, "notes": notes,
-        ]
-        root["screens"] = screens()
-        let obj = sanitize(root)
-        if let data = try? JSONSerialization.data(withJSONObject: obj, options: [.prettyPrinted, .sortedKeys]) {
-            try? data.write(to: URL(fileURLWithPath: "\(out)/\(tag).json"))
-        } else {
-            try? "{\"error\":\"json\"}".write(toFile: "\(out)/\(tag).json", atomically: true, encoding: .utf8)
-        }
+        flush()
         FileManager.default.createFile(atPath: "\(out)/\(tag).done", contents: Data())
         print("done \(tag)")
         fflush(stdout)
