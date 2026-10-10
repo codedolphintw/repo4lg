@@ -1,15 +1,8 @@
 # <scene> <light|dark> <variant>
-chrome light normal
-chrome dark normal
-chrome light compat
-chrome light reduceTransparency
-controls light normal
-controls dark normal
-controls light compat
 glass light normal
 glass dark normal
 overlays light normal
 overlays dark normal
-showcase light normal
-showcase dark normal
-showcase light reduceTransparency
+sidebar_swiftui light normal
+sidebar_swiftui dark normal
+sidebar_swiftui light reduceTransparency

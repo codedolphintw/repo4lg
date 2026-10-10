@@ -21,6 +21,7 @@ struct SplitStripes: View {
 }
 
 struct SplitDemo: View {
+    let flat: Bool
     @State private var sel: String? = "Today"
     let names = ["Inbox", "Today", "Favorites", "Archive", "Trash"]
     var body: some View {
@@ -30,7 +31,11 @@ struct SplitDemo: View {
             }
         } detail: {
             ZStack {
-                SplitStripes().ignoresSafeArea()
+                if flat {
+                    Color(.sRGB, red: 1.0, green: 149.0 / 255, blue: 0.0, opacity: 1).ignoresSafeArea()
+                } else {
+                    SplitStripes().ignoresSafeArea()
+                }
                 Text("Detail").padding(20).glassEffect(.regular, in: .rect(cornerRadius: 20))
             }
         }
@@ -44,7 +49,7 @@ struct SplitDemo: View {
 @MainActor
 func scene_sidebar_swiftui(_ ctx: Ctx) async {
     ctx.backdrop(gray: 192)
-    let host = NSHostingController(rootView: SplitDemo())
+    let host = NSHostingController(rootView: SplitDemo(flat: false))
     let w = NSWindow(contentViewController: host)
     w.styleMask = [.titled, .closable, .miniaturizable, .resizable]
     w.title = "SwiftUI split"
@@ -56,4 +61,8 @@ func scene_sidebar_swiftui(_ ctx: Ctx) async {
     await ctx.pause(2.5)
     ctx.shot("split", windows: [("split-swiftui", w)])
     if let frame = w.contentView?.superview { ctx.notes["tree-split"] = ctx.dump(frame, maxDepth: 6) }
+    // Flat orange detail: the sidebar's outline is easy to measure on it.
+    host.rootView = SplitDemo(flat: true)
+    await ctx.pause(2.0)
+    ctx.shot("split-flat", windows: [("split-swiftui", w)])
 }

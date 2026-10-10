@@ -73,8 +73,8 @@ func scene_overlays(_ ctx: Ctx) async {
     ctx.backdrop(gray: 192)
     let t = MenuTarget()
     ctx.keep.append(t)
-    let host = ctx.titled("host", 40, 70, 720, 460)
-    let content = DrawView(frame: NSRect(x: 0, y: 0, width: 720, height: 420)) { r in
+    let host = ctx.titled("host", 40, 70, 640, 460)
+    let content = DrawView(frame: NSRect(x: 0, y: 0, width: 640, height: 420)) { r in
         NSColor.windowBackgroundColor.setFill()
         r.fill()
     }
@@ -111,7 +111,8 @@ func scene_overlays(_ ctx: Ctx) async {
     }
     ctx.later(3.8) { ctx.shot("menu-hover-share") }
     ctx.later(4.2) { m.cancelTracking() }
-    await runBlocking { _ = m.popUp(positioning: nil, at: NSPoint(x: 60, y: 140), in: content) }
+    // (at a screen point beside the host window, so the menu sits on the flat grey backdrop)
+    await runBlocking { _ = m.popUp(positioning: nil, at: NSPoint(x: 720, y: screenHeight() - 200), in: nil) }
     await ctx.pause(0.8)
 
     // 2. Pop-up button's own menu.
@@ -132,8 +133,12 @@ func scene_overlays(_ ctx: Ctx) async {
     pop.contentSize = NSSize(width: 260, height: 150)
     pop.show(relativeTo: btn.bounds, of: btn, preferredEdge: .maxY)
     await ctx.pause(1.5)
-    if let pw = pvc.view.window { ctx.track("popover", pw) }
-    ctx.shot("popover")
+    var popWin: [(String, NSWindow)] = []
+    if let pw = pvc.view.window {
+        ctx.track("popover", pw)
+        popWin = [("popover", pw)]
+    }
+    ctx.shot("popover", windows: popWin)
     pop.close()
     await ctx.pause(0.8)
 

@@ -54,6 +54,8 @@ enum GL {
         let top: CGFloat = clear ? 340 : 70
         return CGRect(x: sizeX[i], y: top, width: spec.0, height: spec.1)
     }
+    static let adaptNames = ["flat128", "stripes12_duty50", "stripes12_duty25", "stripes12_duty75", "stripes3_duty50",
+                             "stripes48_duty50", "checker12", "gradient_x", "gradient_y", "white_dots_on_black"]
     static let satColors: [(Int, Int, Int)] = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0)]
     static func satSwatch(_ i: Int) -> CGRect { CGRect(x: 20 + CGFloat(i) * 92, y: 380, width: 92, height: 140) }
     static func satGlass(_ i: Int) -> CGRect {
@@ -187,6 +189,98 @@ struct SizesGlass: View {
     }
 }
 
+/// Ten backdrops of the same mean brightness family (see GL.adaptNames), one per tile,
+/// to find out what the regular glass adapts to.
+struct AdaptPattern: View {
+    let kind: Int
+    var body: some View {
+        Canvas { c, size in
+            func fill(_ r: CGRect, _ v: Double) {
+                c.fill(Path(r), with: .color(Color(.sRGB, white: v, opacity: 1)))
+            }
+            func stripes(_ period: CGFloat, _ black: CGFloat) {
+                fill(CGRect(origin: .zero, size: size), 1.0)
+                var x: CGFloat = 0
+                while x < size.width {
+                    fill(CGRect(x: x, y: 0, width: min(black, size.width - x), height: size.height), 0.0)
+                    x += period
+                }
+            }
+            switch kind {
+            case 0:
+                fill(CGRect(origin: .zero, size: size), 128.0 / 255)
+            case 1: stripes(24, 12)
+            case 2: stripes(24, 6)
+            case 3: stripes(24, 18)
+            case 4: stripes(6, 3)
+            case 5: stripes(96, 48)
+            case 6:
+                fill(CGRect(origin: .zero, size: size), 1.0)
+                var y: CGFloat = 0
+                var row = 0
+                while y < size.height {
+                    var x: CGFloat = 0
+                    var col = 0
+                    while x < size.width {
+                        if (row + col) % 2 == 0 { fill(CGRect(x: x, y: y, width: 12, height: 12), 0.0) }
+                        x += 12
+                        col += 1
+                    }
+                    y += 12
+                    row += 1
+                }
+            case 7:
+                var x: CGFloat = 0
+                while x < size.width {
+                    fill(CGRect(x: x, y: 0, width: 1, height: size.height), Double(x / (size.width - 1)))
+                    x += 1
+                }
+            case 8:
+                var y: CGFloat = 0
+                while y < size.height {
+                    fill(CGRect(x: 0, y: y, width: size.width, height: 1), Double(y / (size.height - 1)))
+                    y += 1
+                }
+            default:
+                fill(CGRect(origin: .zero, size: size), 0.0)
+                var y: CGFloat = 6
+                while y < size.height {
+                    var x: CGFloat = 6
+                    while x < size.width {
+                        c.fill(Path(ellipseIn: CGRect(x: x - 3, y: y - 3, width: 6, height: 6)),
+                               with: .color(Color(.sRGB, white: 1.0, opacity: 1)))
+                        x += 12
+                    }
+                    y += 12
+                }
+            }
+        }
+        .frame(width: GL.tileW, height: GL.tileH)
+        .clipped()
+    }
+}
+
+struct AdaptTiles: View {
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            ForEach(0..<10, id: \.self) { i in
+                AdaptPattern(kind: i)
+                    .offset(x: GL.tile(i / 5, i % 5).minX, y: GL.tile(i / 5, i % 5).minY)
+            }
+        }
+    }
+}
+
+struct AdaptGlass: View {
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            ForEach(0..<10, id: \.self) { i in
+                glassBox(GL.glassRect(i / 5, i % 5), Glass.regular, GL.gr)
+            }
+        }
+    }
+}
+
 struct GlassPage: View {
     let kind: String
     let panels: Bool
@@ -194,10 +288,10 @@ struct GlassPage: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             if panels {
-                if kind == "grid" { GridTiles() } else if kind == "sizes" { SizesTiles() } else { MiscPanels() }
+                if kind == "grid" { GridTiles() } else if kind == "sizes" { SizesTiles() } else if kind == "adapt" { AdaptTiles() } else { MiscPanels() }
             }
             if glass {
-                if kind == "grid" { GridGlass() } else if kind == "sizes" { SizesGlass() } else { MiscGlass() }
+                if kind == "grid" { GridGlass() } else if kind == "sizes" { SizesGlass() } else if kind == "adapt" { AdaptGlass() } else { MiscGlass() }
             }
         }
         .frame(width: 1000, height: 600, alignment: .topLeading)
@@ -253,6 +347,14 @@ func glassLayout() -> [String: Any] {
         }
     }
     L["sizes"] = sizes
+    var adapt: [[String: Any]] = []
+    for i in 0..<10 {
+        var d: [String: Any] = ["name": GL.adaptNames[i]]
+        d["tile"] = rj(GL.tile(i / 5, i % 5))
+        d["glass"] = rj(GL.glassRect(i / 5, i % 5))
+        adapt.append(d)
+    }
+    L["adapt"] = adapt
     return L
 }
 
@@ -278,6 +380,9 @@ func scene_glass(_ ctx: Ctx) async {
     host.rootView = GlassPage(kind: "sizes", panels: true, glass: true)
     await ctx.pause(2.0)
     ctx.shot("in-sizes")
+    host.rootView = GlassPage(kind: "adapt", panels: true, glass: true)
+    await ctx.pause(2.0)
+    ctx.shot("in-adapt")
     inw.orderOut(nil)
 
     // 2. Behind-window glass: the backdrop is its own window; the glass lives in a
@@ -310,4 +415,8 @@ func scene_glass(_ ctx: Ctx) async {
     ovHost.rootView = GlassPage(kind: "sizes", panels: false, glass: true)
     await ctx.pause(2.5)
     ctx.shot("bh-sizes")
+    ovHost.rootView = GlassPage(kind: "adapt", panels: false, glass: false)
+    bdHost.rootView = GlassPage(kind: "adapt", panels: true, glass: false)
+    await ctx.pause(1.5)
+    ctx.shot("ctl-adapt")
 }
