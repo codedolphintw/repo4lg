@@ -281,6 +281,60 @@ struct AdaptGlass: View {
     }
 }
 
+/// Page "ctx": does the regular glass look beyond what is under it? Top row: 120 x 64 glass
+/// over stripes that exist only in a patch around it (margin 0 ... 80 px); bottom band:
+/// full-width stripes with the same glass alone, next to a second regular glass, next to clear.
+enum CX {
+    static let margins: [CGFloat] = [0, 10, 20, 40, 80]
+    static func patch(_ i: Int) -> CGRect {
+        var x: CGFloat = 20
+        for j in 0..<i { x += 120 + 2 * margins[j] + 20 }
+        let m = margins[i]
+        return CGRect(x: x, y: 150 - 32 - m, width: 120 + 2 * m, height: 64 + 2 * m)
+    }
+    static func glass(_ i: Int) -> CGRect {
+        let p = patch(i)
+        let m = margins[i]
+        return CGRect(x: p.minX + m, y: p.minY + m, width: 120, height: 64)
+    }
+    static let band = CGRect(x: 0, y: 300, width: 1000, height: 300)
+    static let lower: [(String, CGRect, Bool)] = [
+        ("band_alone", CGRect(x: 60, y: 420, width: 120, height: 64), false),
+        ("band_pair_a", CGRect(x: 240, y: 420, width: 120, height: 64), false),
+        ("band_pair_b", CGRect(x: 380, y: 420, width: 120, height: 64), false),
+        ("band_regular_next_to_clear", CGRect(x: 560, y: 420, width: 120, height: 64), false),
+        ("band_clear_next_to_regular", CGRect(x: 700, y: 420, width: 120, height: 64), true),
+    ]
+}
+
+struct CtxTiles: View {
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            ForEach(0..<5, id: \.self) { i in
+                BWStripes().frame(width: CX.patch(i).width, height: CX.patch(i).height).clipped()
+                    .offset(x: CX.patch(i).minX, y: CX.patch(i).minY)
+            }
+            BWStripes().frame(width: CX.band.width, height: CX.band.height).clipped()
+                .offset(x: CX.band.minX, y: CX.band.minY)
+        }
+    }
+}
+
+struct CtxGlass: View {
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            ForEach(0..<5, id: \.self) { i in
+                glassBox(CX.glass(i), Glass.regular, 20)
+            }
+            glassBox(CX.lower[0].1, Glass.regular, 20)
+            glassBox(CX.lower[1].1, Glass.regular, 20)
+            glassBox(CX.lower[2].1, Glass.regular, 20)
+            glassBox(CX.lower[3].1, Glass.regular, 20)
+            glassBox(CX.lower[4].1, Glass.clear, 20)
+        }
+    }
+}
+
 struct GlassPage: View {
     let kind: String
     let panels: Bool
@@ -288,10 +342,10 @@ struct GlassPage: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             if panels {
-                if kind == "grid" { GridTiles() } else if kind == "sizes" { SizesTiles() } else if kind == "adapt" { AdaptTiles() } else { MiscPanels() }
+                if kind == "grid" { GridTiles() } else if kind == "sizes" { SizesTiles() } else if kind == "adapt" { AdaptTiles() } else if kind == "ctx" { CtxTiles() } else { MiscPanels() }
             }
             if glass {
-                if kind == "grid" { GridGlass() } else if kind == "sizes" { SizesGlass() } else if kind == "adapt" { AdaptGlass() } else { MiscGlass() }
+                if kind == "grid" { GridGlass() } else if kind == "sizes" { SizesGlass() } else if kind == "adapt" { AdaptGlass() } else if kind == "ctx" { CtxGlass() } else { MiscGlass() }
             }
         }
         .frame(width: 1000, height: 600, alignment: .topLeading)
@@ -355,6 +409,19 @@ func glassLayout() -> [String: Any] {
         adapt.append(d)
     }
     L["adapt"] = adapt
+    var ctx: [[String: Any]] = []
+    for i in 0..<5 {
+        var d: [String: Any] = ["name": "patch_margin_\(Int(CX.margins[i]))"]
+        d["glass"] = rj(CX.glass(i))
+        d["patch"] = rj(CX.patch(i))
+        ctx.append(d)
+    }
+    for (n, r, clear) in CX.lower {
+        var d: [String: Any] = ["name": n, "kind": clear ? "clear" : "regular"]
+        d["glass"] = rj(r)
+        ctx.append(d)
+    }
+    L["ctx"] = ctx
     return L
 }
 
@@ -383,6 +450,9 @@ func scene_glass(_ ctx: Ctx) async {
     host.rootView = GlassPage(kind: "adapt", panels: true, glass: true)
     await ctx.pause(2.0)
     ctx.shot("in-adapt")
+    host.rootView = GlassPage(kind: "ctx", panels: true, glass: true)
+    await ctx.pause(2.0)
+    ctx.shot("in-ctx")
     inw.orderOut(nil)
 
     // 2. Behind-window glass: the backdrop is its own window; the glass lives in a
@@ -419,4 +489,8 @@ func scene_glass(_ ctx: Ctx) async {
     bdHost.rootView = GlassPage(kind: "adapt", panels: true, glass: false)
     await ctx.pause(1.5)
     ctx.shot("ctl-adapt")
+    ovHost.rootView = GlassPage(kind: "ctx", panels: false, glass: false)
+    bdHost.rootView = GlassPage(kind: "ctx", panels: true, glass: false)
+    await ctx.pause(1.5)
+    ctx.shot("ctl-ctx")
 }

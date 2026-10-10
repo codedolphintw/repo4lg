@@ -1,4 +1,4 @@
-// SCENES: chrome sidebar
+// SCENES: chrome sidebar toolbarglass
 // Window chrome of macOS 26 (AppKit): titled window with and without a toolbar in
 // each toolbar style, traffic lights, window shadow (per-window captures keep the
 // alpha), and a split view with a sidebar. Run once normally and once with
@@ -202,4 +202,53 @@ func scene_sidebar(_ ctx: Ctx) async {
     sideItem.isCollapsed = true
     await ctx.pause(1.5)
     ctx.shot("split-collapsed", windows: [("split", w)])
+}
+
+/// Toolbar glass (the platters behind the toolbar items) over four known backdrops that run
+/// under the toolbar: 12 px black/white stripes and flat black, grey 128 and white.
+@MainActor
+func scene_toolbarglass(_ ctx: Ctx) async {
+    ctx.backdrop(gray: 192)
+    struct Spec {
+        let name: String
+        let level: Int
+        let x: CGFloat
+        let top: CGFloat
+    }
+    let specs: [Spec] = [
+        Spec(name: "stripes", level: -1, x: 10, top: 40), Spec(name: "g000", level: 0, x: 520, top: 40),
+        Spec(name: "g128", level: 128, x: 10, top: 250), Spec(name: "g255", level: 255, x: 520, top: 250),
+    ]
+    var wins: [(String, NSWindow)] = []
+    for sp in specs {
+        let w = ctx.titledContent(sp.name, 480, 150, style: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView])
+        let level = sp.level
+        w.contentView = DrawView(frame: NSRect(x: 0, y: 0, width: 480, height: 150)) { r in
+            if level < 0 {
+                paintStripes(r, width: 12, colors: [gray(0), gray(255)])
+            } else {
+                gray(level).setFill()
+                r.fill()
+            }
+        }
+        let ids: [NSToolbarItem.Identifier] = [tbid("add"), tbid("share"), .space, tbid("more"), .flexibleSpace, tbid("search")]
+        let del = TBDelegate(ids)
+        ctx.keep.append(del)
+        let tb = NSToolbar(identifier: "tb-\(sp.name)")
+        tb.delegate = del
+        tb.displayMode = .iconOnly
+        w.toolbar = tb
+        w.toolbarStyle = .unified
+        w.setFrameTopLeftPoint(NSPoint(x: sp.x, y: screenHeight() - sp.top))
+        w.orderFront(nil)
+        wins.append((sp.name, w))
+    }
+    NSApp.activate(ignoringOtherApps: true)
+    await ctx.pause(2.0)
+    for (name, w) in wins {
+        w.makeKeyAndOrderFront(nil)
+        await ctx.pause(1.0)
+        ctx.shot("tb-\(name)", windows: [(name, w)])
+        if let frame = w.contentView?.superview { ctx.notes["tree-\(name)"] = ctx.dump(frame, maxDepth: 6) }
+    }
 }

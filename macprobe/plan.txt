@@ -1,8 +1,5 @@
 # <scene> <light|dark> <variant>
 glass light normal
 glass dark normal
-overlays light normal
-overlays dark normal
-sidebar_swiftui light normal
-sidebar_swiftui dark normal
-sidebar_swiftui light reduceTransparency
+toolbarglass light normal
+toolbarglass dark normal
