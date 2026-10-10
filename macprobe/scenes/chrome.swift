@@ -40,24 +40,27 @@ func scene_chrome(_ ctx: Ctx) async {
         let name: String
         let style: NSWindow.ToolbarStyle?
         let full: Bool
+        let width: CGFloat
+        let x: CGFloat
+        let top: CGFloat
     }
+    // Wide enough that the toolbar items do not collapse into the overflow menu; no two
+    // windows overlap, so every full-screen capture shows the key window unobscured.
     let defs: [Def] = [
-        Def(name: "plain", style: nil, full: false),
-        Def(name: "unified", style: .unified, full: false),
-        Def(name: "expanded", style: .expanded, full: false),
-        Def(name: "unifiedCompact", style: .unifiedCompact, full: false),
-        Def(name: "preference", style: .preference, full: false),
-        Def(name: "fullsize", style: .unified, full: true),
+        Def(name: "plain", style: nil, full: false, width: 330, x: 10, top: 40),
+        Def(name: "expanded", style: .expanded, full: false, width: 330, x: 350, top: 40),
+        Def(name: "preference", style: .preference, full: false, width: 330, x: 690, top: 40),
+        Def(name: "unified", style: .unified, full: false, width: 480, x: 10, top: 270),
+        Def(name: "fullsize", style: .unified, full: true, width: 480, x: 520, top: 270),
+        Def(name: "unifiedCompact", style: .unifiedCompact, full: false, width: 480, x: 10, top: 500),
     ]
-    let colX: [CGFloat] = [10, 350, 690]
-    let rowTop: [CGFloat] = [40, 380]
     var wins: [(String, NSWindow)] = []
-    for (i, d) in defs.enumerated() {
+    for d in defs {
         var style: NSWindow.StyleMask = [.titled, .closable, .miniaturizable, .resizable]
         if d.full { style.insert(.fullSizeContentView) }
-        let w = ctx.titledContent(d.name, 330, 200, style: style)
+        let w = ctx.titledContent(d.name, d.width, 150, style: style)
         let full = d.full
-        w.contentView = DrawView(frame: NSRect(x: 0, y: 0, width: 330, height: 200)) { r in
+        w.contentView = DrawView(frame: NSRect(x: 0, y: 0, width: d.width, height: 150)) { r in
             if full {
                 rgb(255, 149, 0).setFill()
             } else {
@@ -75,7 +78,7 @@ func scene_chrome(_ ctx: Ctx) async {
             w.toolbar = tb
             w.toolbarStyle = st
         }
-        w.setFrameTopLeftPoint(NSPoint(x: colX[i % 3], y: screenHeight() - rowTop[i / 3]))
+        w.setFrameTopLeftPoint(NSPoint(x: d.x, y: screenHeight() - d.top))
         w.orderFront(nil)
         wins.append((d.name, w))
     }

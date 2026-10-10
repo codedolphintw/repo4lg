@@ -207,9 +207,12 @@ func scene_showcase(_ ctx: Ctx) async {
     w.setFrameTopLeftPoint(NSPoint(x: 12, y: screenHeight() - 40))
     w.makeKeyAndOrderFront(nil)
     NSApp.activate(ignoringOtherApps: true)
-    for page in ["a", "b1", "b2"] {
-        FrameStore.frames = [:]
-        host.rootView = ShowRoot(page: page)
+    for (i, page) in ["a", "b1", "b2"].enumerated() {
+        if i > 0 {
+            // (page "a" is already the root view: setting it again would not re-emit its frames)
+            FrameStore.frames = [:]
+            host.rootView = ShowRoot(page: page)
+        }
         await ctx.pause(2.0)
         var probes: [String: Any] = [:]
         for (k, r) in FrameStore.frames {

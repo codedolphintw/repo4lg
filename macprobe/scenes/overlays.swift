@@ -132,6 +132,7 @@ func scene_overlays(_ ctx: Ctx) async {
     pop.contentSize = NSSize(width: 260, height: 150)
     pop.show(relativeTo: btn.bounds, of: btn, preferredEdge: .maxY)
     await ctx.pause(1.5)
+    if let pw = pvc.view.window { ctx.track("popover", pw) }
     ctx.shot("popover")
     pop.close()
     await ctx.pause(0.8)

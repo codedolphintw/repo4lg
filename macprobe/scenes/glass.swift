@@ -43,6 +43,17 @@ enum GL {
     static let greyClear = CGRect(x: 720, y: 380, width: 120, height: 64)
     static let btnGlass = CGPoint(x: 810, y: 305)
     static let btnProminent = CGPoint(x: 810, y: 355)
+    // Page "sizes": the same glass at five sizes (w, h, corner radius), regular in the
+    // top row and clear in the bottom row, over full-window 12 px stripes.
+    static let sizeSpecs: [(CGFloat, CGFloat, CGFloat)] = [
+        (48, 48, 24), (64, 64, 32), (120, 64, 20), (200, 96, 28), (360, 160, 32),
+    ]
+    static let sizeX: [CGFloat] = [30, 100, 190, 340, 580]
+    static func sizeRect(_ i: Int, clear: Bool) -> CGRect {
+        let spec = sizeSpecs[i]
+        let top: CGFloat = clear ? 340 : 70
+        return CGRect(x: sizeX[i], y: top, width: spec.0, height: spec.1)
+    }
     static let satColors: [(Int, Int, Int)] = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0)]
     static func satSwatch(_ i: Int) -> CGRect { CGRect(x: 20 + CGFloat(i) * 92, y: 380, width: 92, height: 140) }
     static func satGlass(_ i: Int) -> CGRect {
@@ -159,6 +170,23 @@ struct MiscGlass: View {
     }
 }
 
+struct SizesTiles: View {
+    var body: some View {
+        BWStripes().frame(width: 1000, height: 600).clipped()
+    }
+}
+
+struct SizesGlass: View {
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            ForEach(0..<5, id: \.self) { i in
+                glassBox(GL.sizeRect(i, clear: false), Glass.regular, GL.sizeSpecs[i].2)
+                glassBox(GL.sizeRect(i, clear: true), Glass.clear, GL.sizeSpecs[i].2)
+            }
+        }
+    }
+}
+
 struct GlassPage: View {
     let kind: String
     let panels: Bool
@@ -166,10 +194,10 @@ struct GlassPage: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             if panels {
-                if kind == "grid" { GridTiles() } else { MiscPanels() }
+                if kind == "grid" { GridTiles() } else if kind == "sizes" { SizesTiles() } else { MiscPanels() }
             }
             if glass {
-                if kind == "grid" { GridGlass() } else { MiscGlass() }
+                if kind == "grid" { GridGlass() } else if kind == "sizes" { SizesGlass() } else { MiscGlass() }
             }
         }
         .frame(width: 1000, height: 600, alignment: .topLeading)
@@ -216,6 +244,15 @@ func glassLayout() -> [String: Any] {
     L["btnGlassOrigin"] = ["x": q(GL.btnGlass.x), "y": q(GL.btnGlass.y)]
     L["btnProminentOrigin"] = ["x": q(GL.btnProminent.x), "y": q(GL.btnProminent.y)]
     L["stripeWidth"] = 12
+    var sizes: [[String: Any]] = []
+    for i in 0..<5 {
+        for clear in [false, true] {
+            var d: [String: Any] = ["kind": clear ? "clear" : "regular", "radius": Double(GL.sizeSpecs[i].2)]
+            d["rect"] = rj(GL.sizeRect(i, clear: clear))
+            sizes.append(d)
+        }
+    }
+    L["sizes"] = sizes
     return L
 }
 
@@ -238,6 +275,9 @@ func scene_glass(_ ctx: Ctx) async {
     host.rootView = GlassPage(kind: "misc", panels: true, glass: true)
     await ctx.pause(2.0)
     ctx.shot("in-misc", windows: [("inwindow", inw)])
+    host.rootView = GlassPage(kind: "sizes", panels: true, glass: true)
+    await ctx.pause(2.0)
+    ctx.shot("in-sizes")
     inw.orderOut(nil)
 
     // 2. Behind-window glass: the backdrop is its own window; the glass lives in a
@@ -263,4 +303,11 @@ func scene_glass(_ ctx: Ctx) async {
     ovHost.rootView = GlassPage(kind: "misc", panels: false, glass: true)
     await ctx.pause(2.5)
     ctx.shot("bh-misc")
+    ovHost.rootView = GlassPage(kind: "sizes", panels: false, glass: false)
+    bdHost.rootView = GlassPage(kind: "sizes", panels: true, glass: false)
+    await ctx.pause(1.5)
+    ctx.shot("ctl-sizes")
+    ovHost.rootView = GlassPage(kind: "sizes", panels: false, glass: true)
+    await ctx.pause(2.5)
+    ctx.shot("bh-sizes")
 }

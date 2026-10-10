@@ -178,11 +178,29 @@ func scene_controls(_ ctx: Ctx) async {
     w.makeKeyAndOrderFront(nil)
     NSApp.activate(ignoringOtherApps: true)
     let a = ctlBuildPage(w, rows: ctlRowsA(), sizes: sizes)
-    await ctx.pause(1.2)
+    await ctx.pause(1.0)
+    ctlRefit(a)
+    await ctx.pause(1.0)
     ctx.notes["cells-A"] = ctlRecord(a)
     ctx.shot("page-a", windows: [("Controls", w)])
     let b = ctlBuildPage(w, rows: ctlRowsB(), sizes: sizes)
-    await ctx.pause(1.2)
+    await ctx.pause(1.0)
+    ctlRefit(b)
+    await ctx.pause(1.0)
     ctx.notes["cells-B"] = ctlRecord(b)
     ctx.shot("page-b", windows: [("Controls", w)])
+}
+
+/// Some controls (switch, stepper) only report their size-specific intrinsic size after
+/// they are in a window: set each frame to it again, keeping the centre.
+@MainActor
+func ctlRefit(_ made: [(String, String, NSView)]) {
+    for (_, _, v) in made {
+        let ic = v.intrinsicContentSize
+        let cx = v.frame.midX
+        let cy = v.frame.midY
+        let nw = ic.width > 0 ? ic.width : v.frame.width
+        let nh = ic.height > 0 ? ic.height : v.frame.height
+        v.frame = NSRect(x: (cx - nw / 2).rounded(), y: (cy - nh / 2).rounded(), width: nw, height: nh)
+    }
 }
