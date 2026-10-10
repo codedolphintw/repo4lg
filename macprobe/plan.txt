@@ -1,5 +1,3 @@
 # <scene> <light|dark> <variant>
-chrome light normal
-chrome dark normal
-sidebar light normal
-sidebar dark normal
+glass light normal
+glass dark normal

@@ -335,17 +335,72 @@ struct CtxGlass: View {
     }
 }
 
+/// Page "bisect": variants of the `sizes` page (see macos.md 3.9) that remove one difference at a
+/// time: no clear shapes, one shape alone, another position, equal sizes, stripes only in a band,
+/// stripes only in patches. Variant 0 is the sizes page itself (the control).
+enum BX {
+    static let count = 7
+    static func shapes(_ v: Int) -> [(CGRect, CGFloat, Bool)] {
+        var res: [(CGRect, CGFloat, Bool)] = []
+        let sizesRegular = (0..<5).map { (GL.sizeRect($0, clear: false), GL.sizeSpecs[$0].2, false) }
+        switch v {
+        case 0:
+            res = sizesRegular
+            for i in 0..<5 { res.append((GL.sizeRect(i, clear: true), GL.sizeSpecs[i].2, true)) }
+        case 2:
+            res = [sizesRegular[2]]
+        case 3:
+            res = [(CGRect(x: 225, y: 38, width: 120, height: 64), 20, false)]
+        case 4:
+            for i in 0..<5 { res.append((CGRect(x: 30 + 160 * CGFloat(i), y: 70, width: 120, height: 64), 20, false)) }
+        default:
+            res = sizesRegular
+        }
+        return res
+    }
+    static func stripeRects(_ v: Int) -> [CGRect] {
+        switch v {
+        case 5: return [CGRect(x: 0, y: 0, width: 1000, height: 300)]
+        case 6: return shapes(v).map { $0.0.insetBy(dx: -40, dy: -40) }
+        default: return [CGRect(x: 0, y: 0, width: 1000, height: 600)]
+        }
+    }
+}
+
+struct BisectTiles: View {
+    let v: Int
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            ForEach(Array(BX.stripeRects(v).enumerated()), id: \.offset) { _, r in
+                BWStripes().frame(width: r.width, height: r.height).clipped().offset(x: r.minX, y: r.minY)
+            }
+        }
+    }
+}
+
+struct BisectGlass: View {
+    let v: Int
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            ForEach(Array(BX.shapes(v).enumerated()), id: \.offset) { _, sp in
+                glassBox(sp.0, sp.2 ? Glass.clear : Glass.regular, sp.1)
+            }
+        }
+    }
+}
+
 struct GlassPage: View {
     let kind: String
     let panels: Bool
     let glass: Bool
+    var v: Int = 0
     var body: some View {
         ZStack(alignment: .topLeading) {
             if panels {
-                if kind == "grid" { GridTiles() } else if kind == "sizes" { SizesTiles() } else if kind == "adapt" { AdaptTiles() } else if kind == "ctx" { CtxTiles() } else { MiscPanels() }
+                if kind == "grid" { GridTiles() } else if kind == "sizes" { SizesTiles() } else if kind == "adapt" { AdaptTiles() } else if kind == "ctx" { CtxTiles() } else if kind == "bisect" { BisectTiles(v: v) } else { MiscPanels() }
             }
             if glass {
-                if kind == "grid" { GridGlass() } else if kind == "sizes" { SizesGlass() } else if kind == "adapt" { AdaptGlass() } else if kind == "ctx" { CtxGlass() } else { MiscGlass() }
+                if kind == "grid" { GridGlass() } else if kind == "sizes" { SizesGlass() } else if kind == "adapt" { AdaptGlass() } else if kind == "ctx" { CtxGlass() } else if kind == "bisect" { BisectGlass(v: v) } else { MiscGlass() }
             }
         }
         .frame(width: 1000, height: 600, alignment: .topLeading)
@@ -422,6 +477,19 @@ func glassLayout() -> [String: Any] {
         ctx.append(d)
     }
     L["ctx"] = ctx
+    var bisect: [[String: Any]] = []
+    for v in 0..<BX.count {
+        var shapes: [[String: Any]] = []
+        for (r, radius, clear) in BX.shapes(v) {
+            var d: [String: Any] = ["kind": clear ? "clear" : "regular", "radius": Double(radius)]
+            d["rect"] = rj(r)
+            shapes.append(d)
+        }
+        var d: [String: Any] = ["v": v, "shapes": shapes]
+        d["stripes"] = BX.stripeRects(v).map { rj($0) }
+        bisect.append(d)
+    }
+    L["bisect"] = bisect
     return L
 }
 
@@ -453,6 +521,11 @@ func scene_glass(_ ctx: Ctx) async {
     host.rootView = GlassPage(kind: "ctx", panels: true, glass: true)
     await ctx.pause(2.0)
     ctx.shot("in-ctx")
+    for v in 0..<BX.count {
+        host.rootView = GlassPage(kind: "bisect", panels: true, glass: true, v: v)
+        await ctx.pause(2.0)
+        ctx.shot("in-bisect\(v)")
+    }
     inw.orderOut(nil)
 
     // 2. Behind-window glass: the backdrop is its own window; the glass lives in a
@@ -493,4 +566,10 @@ func scene_glass(_ ctx: Ctx) async {
     bdHost.rootView = GlassPage(kind: "ctx", panels: true, glass: false)
     await ctx.pause(1.5)
     ctx.shot("ctl-ctx")
+    for v in 0..<BX.count {
+        ovHost.rootView = GlassPage(kind: "bisect", panels: false, glass: false, v: v)
+        bdHost.rootView = GlassPage(kind: "bisect", panels: true, glass: false, v: v)
+        await ctx.pause(1.5)
+        ctx.shot("ctl-bisect\(v)")
+    }
 }
